@@ -35,6 +35,18 @@
 
 <span class="hljs-keyword">internal </span><span class="hljs-keyword">macro</span> <span class="hljs-title function_">internalMacro</span>(<span class="hljs-variable parameter_">input:</span> Tokens)<span class="hljs-punctuation">:</span> <span class="hljs-type">Tokens</span> {
     <span class="hljs-keyword">return</span> <span class="hljs-variable">input</span>
+}<span class="hljs-keyword">
+
+</span><span class="hljs-keyword">macro</span> <span class="hljs-keyword">func</span> <span class="hljs-title function_">debugLog</span>(<span class="hljs-variable parameter_">message:</span> String)<span class="hljs-punctuation">:</span> <span class="hljs-type">Unit</span> {
+    <span class="hljs-title function_ invoke__">println</span>(<span class="hljs-variable">message</span>)
+}
+
+<span class="hljs-keyword">public </span><span class="hljs-keyword">macro</span> <span class="hljs-keyword">func</span> <span class="hljs-title function_">trace</span>(<span class="hljs-variable parameter_">funcName:</span> String, <span class="hljs-variable parameter_">args:</span> Tokens)<span class="hljs-punctuation">:</span> <span class="hljs-type">Tokens</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-variable">quote</span> {
+        <span class="hljs-title function_ invoke__">println</span>(<span class="hljs-string">&quot;Entering: &quot;</span> <span class="hljs-operator">+</span> $(<span class="hljs-variable">funcName</span>))
+        $(<span class="hljs-variable">args</span>)
+        <span class="hljs-title function_ invoke__">println</span>(<span class="hljs-string">&quot;Exiting: &quot;</span> <span class="hljs-operator">+</span> $(<span class="hljs-variable">funcName</span>))
+    }
 }
 
 <span class="hljs-title function_ invoke__">main</span>() {

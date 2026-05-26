@@ -274,6 +274,32 @@ export default function(hljs) {
     ]
   };
 
+  const MACRO_FUNC_DECL = {
+    begin: [
+      /(?:\b(public|private|protected|internal))?\s*/,
+      /\bmacro\b/,
+      /\s+/,
+      /\bfunc\b/,
+      /\s+/,
+      /[A-Za-z_][A-Za-z0-9_]*/
+    ],
+    beginScope: {
+      1: 'keyword',
+      2: 'keyword',
+      4: 'keyword',
+      6: 'title.function'
+    },
+    relevance: 15,
+    contains: [
+      GENERIC_PARAMS,
+      PARAM_LIST,
+      {
+        match: /:/,
+        scope: 'punctuation'
+      }
+    ]
+  };
+
   const FUNCTION_DECL = {
     begin: [
       /(?:\b(public|private|protected|internal|override|redef|mut|static|abstract|sealed|open))?\s*/,
@@ -538,6 +564,7 @@ export default function(hljs) {
       PACKAGE_DECL,
       MACRO_PACKAGE_DECL,
       IMPORT_DECL,
+      MACRO_FUNC_DECL,
       FUNCTION_DECL,
       CLASS_DECL,
       PROP_DECL,
@@ -583,6 +610,7 @@ export default function(hljs) {
           NUMBER,
           CONTROL_FLOW,
           VAR_DECL,
+          MACRO_FUNC_DECL,
           FUNCTION_DECL,
           CLASS_DECL,
           PROP_DECL,

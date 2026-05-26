@@ -37,6 +37,18 @@ internal macro internalMacro(input: Tokens): Tokens {
     return input
 }
 
+macro func debugLog(message: String): Unit {
+    println(message)
+}
+
+public macro func trace(funcName: String, args: Tokens): Tokens {
+    return quote {
+        println("Entering: " + $(funcName))
+        $(args)
+        println("Exiting: " + $(funcName))
+    }
+}
+
 main() {
     let exprTokens = quote(1 + 2)
     let funcTokens = quote(func foo() { return 42 })
