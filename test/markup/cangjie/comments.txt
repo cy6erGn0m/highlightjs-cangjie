@@ -1,0 +1,56 @@
+// Single-line comment
+
+/* Single-line block comment */
+
+/* Multi-line
+   block
+   comment */
+
+/* Nested /* inner */ comment */
+
+// Line comment with code: let x = 1
+
+/**
+ * Documentation comment
+ * @param x - the input value
+ * @return the result
+ */
+func documented(x: Int64): Int64 { x * 2 }
+
+/** Another doc comment */
+
+/***/ // Three asterisks - not a doc comment
+
+/**/ // Empty - not a doc comment
+
+/*
+ * Comment with keywords: func class struct
+ * Comment with types: Int64 String Bool
+ * Comment with operators: + - * /
+ */
+
+// TODO: implement this feature
+// FIXME: fix this bug
+// NOTE: important note
+// OPTIMIZE: performance improvement
+// HACK: workaround
+// XXX: dangerous code
+
+let x = 1 // trailing comment
+
+/*
+  Comment inside
+  a function
+*/
+func withComment(): Unit {
+    // Inside function
+    /* Also inside */
+}
+
+/* /* deeply /* nested */ */ comment */
+
+/* Comment with special chars: ${interpolation} \n \t */
+
+// Comment with raw string syntax: #"..."#
+
+// Comment with annotation: @Test

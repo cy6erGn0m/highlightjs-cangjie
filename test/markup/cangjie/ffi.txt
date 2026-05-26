@@ -1,0 +1,36 @@
+foreign func malloc(size: UIntNative): CPointer<Unit>
+foreign func free(ptr: CPointer<Unit>): Unit
+foreign func strlen(s: CPointer<Byte>): UIntNative
+
+foreign class ForeignClass {}
+foreign struct ForeignStruct {}
+
+unsafe {
+    let ptr = malloc(1024)
+    free(ptr)
+}
+
+func unsafeExample(): Unit {
+    unsafe {
+        let data = CPointer<Int64>.alloc(10)
+        data[0] = 42
+        println(data[0])
+        data.free()
+    }
+}
+
+let cPtr: CPointer<Int64> = CPointer<Int64>.alloc(100)
+cPtr[0] = 123
+let value = cPtr[0]
+cPtr.free()
+
+let cArray: CPointer<Int64> = unsafe { CPointer<Int64>.alloc(10) }
+
+foreign func printf(fmt: CPointer<Byte>, ...): Int32
+
+unsafe {
+    printf("Hello, World!\n".cStr())
+}
+
+@FastNative
+foreign func fastCall(): Int64

@@ -1,0 +1,36 @@
+<span class="hljs-keyword">foreign</span> <span class="hljs-keyword">func</span> <span class="hljs-title function_">malloc</span>(size: UIntNative)<span class="hljs-punctuation">:</span> CPointer&lt;<span class="hljs-type">Unit</span>&gt;
+<span class="hljs-keyword">foreign</span> <span class="hljs-keyword">func</span> <span class="hljs-title function_">free</span>(ptr: CPointer&lt;Unit&gt;)<span class="hljs-punctuation">:</span> <span class="hljs-type">Unit</span>
+<span class="hljs-keyword">foreign</span> <span class="hljs-keyword">func</span> <span class="hljs-title function_">strlen</span>(s: CPointer&lt;Byte&gt;)<span class="hljs-punctuation">:</span> <span class="hljs-type">UIntNative</span>
+
+<span class="hljs-variable">foreign</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ForeignClass</span> {}
+<span class="hljs-variable">foreign</span> <span class="hljs-keyword">struct</span> <span class="hljs-title class_">ForeignStruct</span> {}
+
+<span class="hljs-keyword">unsafe</span> {
+    let ptr = malloc(1024)
+    free(ptr)
+}
+
+<span class="hljs-keyword">func</span> <span class="hljs-title function_">unsafeExample</span>()<span class="hljs-punctuation">:</span> <span class="hljs-type">Unit</span> {
+    unsafe {
+        let data = CPointer&lt;Int64&gt;.alloc(10)
+        data[0] = 42
+        println(data[0])
+        data.free()
+    }
+}
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">cPtr</span><span class="hljs-punctuation">:</span> CPointer&lt;<span class="hljs-type">Int64</span>&gt; = CPointer&lt;<span class="hljs-type">Int64</span>&gt;.alloc(100)
+<span class="hljs-variable">cPtr</span>[0] = <span class="hljs-number">123</span>
+<span class="hljs-keyword">let</span> <span class="hljs-variable">value</span> = <span class="hljs-variable">cPtr</span>[0]
+<span class="hljs-variable">cPtr</span>.free()
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">cArray</span><span class="hljs-punctuation">:</span> CPointer&lt;<span class="hljs-type">Int64</span>&gt; = <span class="hljs-keyword">unsafe</span> { CPointer&lt;Int64&gt;.alloc(10) }
+
+<span class="hljs-keyword">foreign</span> <span class="hljs-keyword">func</span> <span class="hljs-title function_">printf</span>(fmt: CPointer&lt;Byte&gt;, ...)<span class="hljs-punctuation">:</span> <span class="hljs-type">Int32</span>
+
+<span class="hljs-keyword">unsafe</span> {
+    printf(&quot;Hello, World!\n&quot;.cStr())
+}
+
+<span class="hljs-meta">@FastNative</span>
+<span class="hljs-keyword">foreign</span> <span class="hljs-keyword">func</span> <span class="hljs-title function_">fastCall</span>()<span class="hljs-punctuation">:</span> <span class="hljs-type">Int64</span>

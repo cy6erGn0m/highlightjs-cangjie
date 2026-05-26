@@ -1,0 +1,45 @@
+match (value) {
+    case 0 => println("zero")
+    case 1 => println("one")
+    case _ => println("other")
+}
+
+match (opt) {
+    case Some(v) => println(v)
+    case None => println("empty")
+}
+
+match (tuple) {
+    case (0, 0) => println("origin")
+    case (x, 0) => println("x-axis: ${x}")
+    case (0, y) => println("y-axis: ${y}")
+    case (x, y) => println("point: ${x}, ${y}")
+}
+
+match (list) {
+    case [] => println("empty")
+    case [first] => println("single: ${first}")
+    case [first, ...rest] => println("first: ${first}, rest: ${rest}")
+}
+
+match (value) {
+    case v where v > 0 => println("positive")
+    case v where v < 0 => println("negative")
+    case _ => println("zero")
+}
+
+match (expr) {
+    case a | b => println("a or b")
+    case c | d | e => println("c, d, or e")
+}
+
+let result = match (opt) {
+    case Some(v) => v
+    case None => 0
+}
+
+match (complex) {
+    case Point(x, y) where x > 0 && y > 0 => println("first quadrant")
+    case Point(x, y) where x < 0 && y > 0 => println("second quadrant")
+    case _ => println("other")
+}

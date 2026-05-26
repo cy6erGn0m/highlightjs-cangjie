@@ -1,0 +1,63 @@
+package example.basic
+
+import std.collection.*
+import std.io.File
+import std.math.{sqrt, pow, log}
+import std.concurrent as conc
+public import std.format
+
+let immutableValue: Int64 = 100
+var mutableValue: Float64 = 3.14159
+const MAX_SIZE: Int64 = 1024
+
+let inferredInt = 42
+var inferredFloat = 2.5
+const inferredString = "hello"
+
+let isTrue: Bool = true
+let isFalse: Bool = false
+let unitValue: Unit = ()
+
+func greet(name: String): String {
+    return "Hello, ${name}!"
+}
+
+class Point {
+    let x: Int64
+    let y: Int64
+    init(x: Int64, y: Int64) {
+        this.x = x
+        this.y = y
+    }
+}
+
+struct Rectangle {
+    let width: Int64
+    let height: Int64
+}
+
+enum Color {
+    Red
+    Green
+    Blue
+}
+
+interface Shape {
+    func area(): Float64
+}
+
+extend Point <: Shape {
+    func area(): Float64 {
+        return 0.0
+    }
+}
+
+prop description: String {
+    get() { return "A shape" }
+}
+
+type PointPair = (Point, Point)
+
+main() {
+    println(greet("World"))
+}

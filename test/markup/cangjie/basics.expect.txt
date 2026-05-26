@@ -1,0 +1,63 @@
+<span class="hljs-keyword">package</span> <span class="hljs-title namespace_">example.basic</span>
+
+<span class="hljs-keyword">import</span> <span class="hljs-title namespace_">std.collection</span><span class="hljs-operator">.*</span>
+<span class="hljs-keyword">import</span> <span class="hljs-title namespace_">std.io.File</span>
+<span class="hljs-keyword">import</span> <span class="hljs-title namespace_">std.math</span>.{sqrt, pow, log}
+<span class="hljs-keyword">import</span> <span class="hljs-title namespace_">std.concurrent</span> <span class="hljs-variable">as</span> <span class="hljs-variable">conc</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">import</span> <span class="hljs-title namespace_">std.format</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">immutableValue</span><span class="hljs-punctuation">:</span> <span class="hljs-type">Int64</span> = <span class="hljs-number">100</span>
+<span class="hljs-keyword">var</span> <span class="hljs-variable">mutableValue</span><span class="hljs-punctuation">:</span> <span class="hljs-type">Float64</span> = <span class="hljs-number">3.14159</span>
+<span class="hljs-keyword">const</span> <span class="hljs-variable">MAX_SIZE</span><span class="hljs-punctuation">:</span> <span class="hljs-type">Int64</span> = <span class="hljs-number">1024</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">inferredInt</span> = <span class="hljs-number">42</span>
+<span class="hljs-keyword">var</span> <span class="hljs-variable">inferredFloat</span> = <span class="hljs-number">2.5</span>
+<span class="hljs-keyword">const</span> <span class="hljs-variable">inferredString</span> = <span class="hljs-string">&quot;hello&quot;</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">isTrue</span><span class="hljs-punctuation">:</span> <span class="hljs-type">Bool</span> = <span class="hljs-variable">true</span>
+<span class="hljs-keyword">let</span> <span class="hljs-variable">isFalse</span><span class="hljs-punctuation">:</span> <span class="hljs-type">Bool</span> = <span class="hljs-variable">false</span>
+<span class="hljs-keyword">let</span> <span class="hljs-variable">unitValue</span><span class="hljs-punctuation">:</span> <span class="hljs-type">Unit</span> = ()
+
+<span class="hljs-keyword">func</span> <span class="hljs-title function_">greet</span>(<span class="hljs-variable parameter_">name:</span> String)<span class="hljs-punctuation">:</span> <span class="hljs-type">String</span> {
+    return &quot;Hello, ${name}!&quot;
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Point</span> {
+    let x: Int64
+    let y: Int64
+    init(x: Int64, y: Int64) {
+        this.x = x
+        this.y = y
+    }
+}
+
+<span class="hljs-keyword">struct</span> <span class="hljs-title class_">Rectangle</span> {
+    let width: Int64
+    let height: Int64
+}
+
+<span class="hljs-keyword">enum</span> <span class="hljs-title class_">Color</span> {
+    Red
+    Green
+    Blue
+}
+
+<span class="hljs-keyword">interface</span> <span class="hljs-title class_">Shape</span> {
+    func area(): Float64
+}
+
+<span class="hljs-keyword">extend</span> <span class="hljs-title class_">Point</span> <span class="hljs-operator">&lt;:</span> <span class="hljs-type">Shape</span> {
+    func area(): Float64 {
+        return 0.0
+    }
+}
+
+<span class="hljs-keyword">prop</span> <span class="hljs-property">description</span><span class="hljs-punctuation">:</span> <span class="hljs-type">String</span> {
+    get() { return &quot;A shape&quot; }
+}
+
+<span class="hljs-keyword">type</span> <span class="hljs-title">PointPair</span> = (Point, Point)
+
+<span class="hljs-title function_ invoke__">main</span>() {
+    println(greet(&quot;World&quot;))
+}

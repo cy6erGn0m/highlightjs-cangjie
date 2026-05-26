@@ -1,0 +1,79 @@
+@Test
+func testBasic(): Unit {
+    println("test")
+}
+
+@Benchmark
+func benchmarkTest(): Unit {
+    println("benchmark")
+}
+
+@Override
+func overrideMethod(): Unit {}
+
+@Deprecated["Use newFunc instead", since: "1.3.4"]
+func oldFunc(): Unit {}
+
+@Annotation
+class CustomAnnotation {
+    let code: String
+    const init(code: String) {
+        this.code = code
+    }
+}
+
+@Version["1.0"]
+class VersionedClass {}
+
+@Marked
+class MarkedClass {}
+
+@Marked[]
+class MarkedWithBrackets {}
+
+@Annotation[target: [MemberFunction]]
+class TargetedAnnotation {
+    const init() {}
+}
+
+@When[os == "linux"]
+func linuxOnly(): Unit {}
+
+@When[platform == "windows"]
+func windowsOnly(): Unit {}
+
+@FastNative
+foreign func optimizedCall(): Int64
+
+@Frozen
+public func stableFunc(): Unit {}
+
+@OverflowThrowing
+func addThrowing(a: Int8, b: Int8): Int8 { a + b }
+
+@OverflowWrapping
+func addWrapping(a: Int8, b: Int8): Int8 { a + b }
+
+@OverflowSaturating
+func addSaturating(a: Int8, b: Int8): Int8 { a + b }
+
+@Derive[ToString, Hashable, Equatable]
+class AutoDerived {
+    let x: Int64
+}
+
+@EnsurePreparedToMock { => return(staticFunc()) }
+
+@Attribute[State]
+var cnt = 0
+
+@!
+
+let pkg: String = @sourcePackage()
+let file: String = @sourceFile()
+let line: Int64 = @sourceLine()
+
+@TestCase[values: [(1, 2, 3), (10, 20, 30)]]
+func testAdd(a: Int64, b: Int64, expected: Int64): Unit {
+    assert(a + b == expected)
+}

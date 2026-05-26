@@ -1,0 +1,43 @@
+let simpleString: String = "Hello, World!"
+let emptyString: String = ""
+
+let escapedNewline: String = "Line1\nLine2"
+let escapedTab: String = "Tab\tseparated"
+let escapedQuote: String = "Quote: \""
+let escapedBackslash: String = "Backslash: \\"
+let escapedUnicode: String = "Unicode: \u{4E2D}"
+let escapedDollar: String = "Price: \$100"
+
+let multilineString: String = """
+This is a
+multi-line
+string
+"""
+
+let tripleSingle: String = '''
+Also multi-line
+with single quotes
+'''
+
+let name: String = "Alice"
+let greeting: String = "Hello, ${name}!"
+let expressionInterp: String = "Result: ${1 + 2}"
+
+let rawString: String = #"No escaping here: \n \t "#
+
+let rawWithQuotes: String = #"Contains "quotes" inside"# 
+
+let rawDouble: String = ##"Contains "# inside"##
+let rawTriple: String = ###"Contains "## inside"###
+
+let regexPattern: String = ##"\d+.\d+"##
+let pathPattern: String = #"C:\Users\name"# 
+
+let runeA: Rune = 'A'
+let runeUnicode: Rune = '\u{4E2D}'
+let runeEscape: Rune = '\n'
+let rawRune: Rune = r'\n'
+
+let byteLiteral: Rune = b'A'
+
+let jString: String = J"Java-style string"

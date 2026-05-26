@@ -1,0 +1,56 @@
+<span class="hljs-comment">// Single-line comment</span>
+
+<span class="hljs-comment">/* Single-line block comment */</span>
+
+<span class="hljs-comment">/* Multi-line
+   block
+   comment */</span>
+
+<span class="hljs-comment">/* Nested <span class="hljs-comment">/* inner */</span> comment */</span>
+
+<span class="hljs-comment">// Line comment with code: let x = 1</span>
+
+<span class="hljs-comment">/**
+ * Documentation comment
+ * @param x - the input value
+ * @return the result
+ */</span>
+<span class="hljs-keyword">func</span> <span class="hljs-title function_">documented</span>(<span class="hljs-variable parameter_">x:</span> Int64)<span class="hljs-punctuation">:</span> <span class="hljs-type">Int64</span> { x * 2 }
+
+<span class="hljs-comment">/** Another doc comment */</span>
+
+<span class="hljs-comment">/***/</span> <span class="hljs-comment">// Three asterisks - not a doc comment</span>
+
+<span class="hljs-comment">/**/</span> <span class="hljs-comment">// Empty - not a doc comment</span>
+
+<span class="hljs-comment">/*
+ * Comment with keywords: func class struct
+ * Comment with types: Int64 String Bool
+ * Comment with operators: + - * /
+ */</span>
+
+<span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> implement this feature</span>
+<span class="hljs-comment">// <span class="hljs-doctag">FIXME:</span> fix this bug</span>
+<span class="hljs-comment">// <span class="hljs-doctag">NOTE:</span> important note</span>
+<span class="hljs-comment">// <span class="hljs-doctag">OPTIMIZE:</span> performance improvement</span>
+<span class="hljs-comment">// <span class="hljs-doctag">HACK:</span> workaround</span>
+<span class="hljs-comment">// <span class="hljs-doctag">XXX:</span> dangerous code</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">x</span> = <span class="hljs-number">1</span> <span class="hljs-comment">// trailing comment</span>
+
+<span class="hljs-comment">/*
+  Comment inside
+  a function
+*/</span>
+<span class="hljs-keyword">func</span> <span class="hljs-title function_">withComment</span>()<span class="hljs-punctuation">:</span> <span class="hljs-type">Unit</span> {
+    // Inside function
+    /* Also inside */
+}
+
+<span class="hljs-comment">/* <span class="hljs-comment">/* deeply <span class="hljs-comment">/* nested */</span> */</span> comment */</span>
+
+<span class="hljs-comment">/* Comment with special chars: ${interpolation} \n \t */</span>
+
+<span class="hljs-comment">// Comment with raw string syntax: #&quot;...&quot;#</span>
+
+<span class="hljs-comment">// Comment with annotation: @Test</span>

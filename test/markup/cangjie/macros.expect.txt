@@ -1,0 +1,65 @@
+<span class="hljs-keyword">macro</span> <span class="hljs-keyword">package</span> <span class="hljs-title namespace_">example.macros</span>
+
+<span class="hljs-keyword">import</span> <span class="hljs-title namespace_">std.ast</span><span class="hljs-operator">.*</span>
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">macro</span> <span class="hljs-title function_">dprint</span>(<span class="hljs-variable parameter_">input:</span> Tokens)<span class="hljs-punctuation">:</span> <span class="hljs-type">Tokens</span> {
+    let inputStr = input.toString()
+    let result = quote(
+        print($(inputStr) + &quot; = &quot;)
+        println($(input))
+    )
+    return result
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">macro</span> <span class="hljs-title function_">WithModifier</span>(<span class="hljs-variable parameter_">attr:</span> Tokens, <span class="hljs-variable parameter_">input:</span> Tokens)<span class="hljs-punctuation">:</span> <span class="hljs-type">Tokens</span> {
+    return attr + input
+}
+
+<span class="hljs-keyword">macro</span> <span class="hljs-title function_">simple</span>(<span class="hljs-variable parameter_">input:</span> Tokens)<span class="hljs-punctuation">:</span> <span class="hljs-type">Tokens</span> {
+    return input
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">macro</span> <span class="hljs-keyword">package</span> <span class="hljs-title namespace_">public.macro.pkg</span>
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">macro</span> <span class="hljs-title function_">publicMacro</span>(<span class="hljs-variable parameter_">input:</span> Tokens)<span class="hljs-punctuation">:</span> <span class="hljs-type">Tokens</span> {
+    return input
+}
+
+<span class="hljs-keyword">protected</span> <span class="hljs-keyword">macro</span> <span class="hljs-title function_">protectedMacro</span>(<span class="hljs-variable parameter_">input:</span> Tokens)<span class="hljs-punctuation">:</span> <span class="hljs-type">Tokens</span> {
+    return input
+}
+
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">macro</span> <span class="hljs-title function_">privateMacro</span>(<span class="hljs-variable parameter_">input:</span> Tokens)<span class="hljs-punctuation">:</span> <span class="hljs-type">Tokens</span> {
+    return input
+}
+
+<span class="hljs-keyword">internal</span> <span class="hljs-keyword">macro</span> <span class="hljs-title function_">internalMacro</span>(<span class="hljs-variable parameter_">input:</span> Tokens)<span class="hljs-punctuation">:</span> <span class="hljs-type">Tokens</span> {
+    return input
+}
+
+<span class="hljs-title function_ invoke__">main</span>() {
+    let exprTokens = quote(1 + 2)
+    let funcTokens = quote(func foo() { return 42 })
+    
+    let name = &quot;myVar&quot;
+    let value = quote(100)
+    let varDecl = quote(let $(name) = $(value))
+    
+    let a = quote(x)
+    let b = quote(y)
+    let combined = quote($(a) + $(b))
+    
+    let simpleInterp = quote($name)
+    
+    let escapedDollar = quote(\$(literal))
+    let escapedParen = quote(\()
+    let escapedAt = quote(\@)
+    
+    let tokenList = Tokens([
+        Token(TokenKind.INTEGER_LITERAL, &quot;1&quot;),
+        Token(TokenKind.ADD),
+        Token(TokenKind.INTEGER_LITERAL, &quot;2&quot;)
+    ])
+    
+    let tokens = quote(arr = $(tokenList))
+}

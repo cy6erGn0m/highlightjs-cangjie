@@ -1,0 +1,105 @@
+if (condition) {
+    println("true")
+}
+
+if (a > 0) {
+    println("positive")
+} else if (a < 0) {
+    println("negative")
+} else {
+    println("zero")
+}
+
+let result = if (a > 0) { a } else { 0 }
+
+while (condition) {
+    counter++
+}
+
+do {
+    counter++
+} while (condition)
+
+for (i in 1..10) {
+    println(i)
+}
+
+for (i in arr) {
+    println(i)
+}
+
+for ((k, v) in map) {
+    println("${k}: ${v}")
+}
+
+for (i in 1..10 where i % 2 == 0) {
+    println(i)
+}
+
+break
+continue
+return 42
+return
+
+let x = 1 + 2
+let y = 3 - 4
+let z = 5 * 6
+let w = 7 / 8
+let r = 9 % 10
+let p = 2 ** 3
+
+let eq = a == b
+let ne = a != b
+let lt = a < b
+let le = a <= b
+let gt = a > b
+let ge = a >= b
+
+let and = a && b
+let or = a || b
+let not = !a
+
+let shiftL = a << 2
+let shiftR = a >> 2
+let bitAnd = a & b
+let bitOr = a | b
+let bitXor = a ^ b
+let bitNot = ~a
+
+a += 1
+a -= 1
+a *= 2
+a /= 2
+a %= 2
+a **= 2
+a <<= 1
+a >>= 1
+a &= b
+a |= b
+a ^= b
+
+a++
+a--
+
+let pipeline = a |> f |> g
+
+let arrow = a -> b
+let doubleArrow = a => b
+
+let range = 1..10
+let rangeInclusive = 1..=10
+let ellipsis = ...
+
+let coalescing = opt ?? 0
+
+let safeAccess = opt?.value
+let safeIndex = opt?[0]
+let safeCall = opt?()
+
+let colonColon = a::b
+
+let typeBound = T <: Comparable<T>
+
+let backArrow = a <- b
+
+let composition = a ~> b

@@ -1,0 +1,81 @@
+<span class="hljs-keyword">func</span> <span class="hljs-title function_">simple</span>()<span class="hljs-punctuation">:</span> <span class="hljs-type">Int64</span> {
+    return 42
+}
+
+<span class="hljs-keyword">func</span> <span class="hljs-title function_">withParams</span>(<span class="hljs-variable parameter_">a:</span> Int64, <span class="hljs-variable parameter_">b:</span> Int64)<span class="hljs-punctuation">:</span> <span class="hljs-type">Int64</span> {
+    return a + b
+}
+
+<span class="hljs-keyword">func</span> <span class="hljs-title function_">namedParams</span>(<span class="hljs-variable parameter_">name!:</span> String, <span class="hljs-variable parameter_">age!:</span> Int64)<span class="hljs-punctuation">:</span> <span class="hljs-type">String</span> {
+    return &quot;${name}: ${age}&quot;
+}
+
+<span class="hljs-keyword">func</span> <span class="hljs-title function_">defaultValue</span>(<span class="hljs-variable parameter_">a:</span> Int64 = 0)<span class="hljs-punctuation">:</span> <span class="hljs-type">Int64</span> {
+    return a
+}
+
+<span class="hljs-keyword">func</span> <span class="hljs-title function_">generic</span>&lt;T&gt;(<span class="hljs-variable parameter_">value:</span> T)<span class="hljs-punctuation">:</span> <span class="hljs-type">T</span> {
+    return value
+}
+
+<span class="hljs-keyword">func</span> <span class="hljs-title function_">multiGeneric</span>&lt;T<span class="hljs-punctuation">,</span> U&gt;(<span class="hljs-variable parameter_">first:</span> T, <span class="hljs-variable parameter_">second:</span> U)<span class="hljs-punctuation">:</span> (T, U) {
+    return (first, second)
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">func</span> <span class="hljs-title function_">publicFunc</span>()<span class="hljs-punctuation">:</span> <span class="hljs-type">Unit</span> {}
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">func</span> <span class="hljs-title function_">privateFunc</span>()<span class="hljs-punctuation">:</span> <span class="hljs-type">Unit</span> {}
+<span class="hljs-keyword">protected</span> <span class="hljs-keyword">func</span> <span class="hljs-title function_">protectedFunc</span>()<span class="hljs-punctuation">:</span> <span class="hljs-type">Unit</span> {}
+<span class="hljs-keyword">internal</span> <span class="hljs-keyword">func</span> <span class="hljs-title function_">internalFunc</span>()<span class="hljs-punctuation">:</span> <span class="hljs-type">Unit</span> {}
+
+<span class="hljs-keyword">mut</span> <span class="hljs-keyword">func</span> <span class="hljs-title function_">mutFunc</span>()<span class="hljs-punctuation">:</span> <span class="hljs-type">Unit</span> {}
+<span class="hljs-keyword">static</span> <span class="hljs-keyword">func</span> <span class="hljs-title function_">staticFunc</span>()<span class="hljs-punctuation">:</span> <span class="hljs-type">Unit</span> {}
+<span class="hljs-keyword">override</span> <span class="hljs-keyword">func</span> <span class="hljs-title function_">overrideFunc</span>()<span class="hljs-punctuation">:</span> <span class="hljs-type">Unit</span> {}
+<span class="hljs-keyword">redef</span> <span class="hljs-keyword">func</span> <span class="hljs-title function_">redefFunc</span>()<span class="hljs-punctuation">:</span> <span class="hljs-type">Unit</span> {}
+<span class="hljs-keyword">abstract</span> <span class="hljs-keyword">func</span> <span class="hljs-title function_">abstractFunc</span>()<span class="hljs-punctuation">:</span> <span class="hljs-type">Unit</span>
+
+<span class="hljs-variable">operator</span> <span class="hljs-variable">func</span> <span class="hljs-operator">+</span>(a: Int64, b: Int64)<span class="hljs-punctuation">:</span> <span class="hljs-type">Int64</span> {
+    return a + b
+}
+
+<span class="hljs-keyword">func</span> <span class="hljs-title function_">lambda</span>()<span class="hljs-punctuation">:</span> <span class="hljs-type">Unit</span> {
+    let add = (a: Int64, b: Int64): Int64 =&gt; a + b
+    let square = (x: Int64): Int64 =&gt; x * x
+    let noParam = (): Int64 =&gt; 42
+    let closure = (x: Int64): Int64 =&gt; {
+        let y = x + 1
+        return y
+    }
+}
+
+<span class="hljs-keyword">func</span> <span class="hljs-title function_">nested</span>()<span class="hljs-punctuation">:</span> <span class="hljs-type">Unit</span> {
+    func helper(x: Int64): Int64 {
+        return x * 2
+    }
+    return helper(21)
+}
+
+<span class="hljs-keyword">init(<span class="hljs-variable parameter_">x:</span> Int64, <span class="hljs-variable parameter_">y:</span> Int64)</span> {
+    this.x = x
+    this.y = y
+}
+
+<span class="hljs-keyword">~init()</span> {
+    println(&quot;Destroyed&quot;)
+}
+
+<span class="hljs-keyword">const</span> <span class="hljs-variable">func</span> <span class="hljs-title function_ invoke__">constFunc</span>()<span class="hljs-punctuation">:</span> <span class="hljs-type">Int64</span> {
+    return 42
+}
+
+<span class="hljs-keyword">func</span> <span class="hljs-title function_">varParam</span>(<span class="hljs-keyword">var</span> <span class="hljs-variable parameter_">a:</span> Int64)<span class="hljs-punctuation">:</span> <span class="hljs-type">Int64</span> {
+    a = a + 1
+    return a
+}
+
+<span class="hljs-keyword">func</span> <span class="hljs-title function_">letParam</span>(<span class="hljs-keyword">let</span> <span class="hljs-variable parameter_">a:</span> Int64)<span class="hljs-punctuation">:</span> <span class="hljs-type">Int64</span> {
+    return a
+}
+
+<span class="hljs-keyword">func</span> <span class="hljs-title function_">inoutParam</span>(<span class="hljs-variable parameter_">a:</span> inout Int64)<span class="hljs-punctuation">:</span> <span class="hljs-type">Unit</span> {
+    a = a + 1
+}

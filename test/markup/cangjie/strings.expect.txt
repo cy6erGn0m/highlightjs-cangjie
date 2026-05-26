@@ -1,0 +1,43 @@
+<span class="hljs-keyword">let</span> <span class="hljs-variable">simpleString</span><span class="hljs-punctuation">:</span> <span class="hljs-type">String</span> = <span class="hljs-string">&quot;Hello, World!&quot;</span>
+<span class="hljs-keyword">let</span> <span class="hljs-variable">emptyString</span><span class="hljs-punctuation">:</span> <span class="hljs-type">String</span> = <span class="hljs-string">&quot;&quot;</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">escapedNewline</span><span class="hljs-punctuation">:</span> <span class="hljs-type">String</span> = <span class="hljs-string">&quot;Line1<span class="hljs-subst">\n</span>Line2&quot;</span>
+<span class="hljs-keyword">let</span> <span class="hljs-variable">escapedTab</span><span class="hljs-punctuation">:</span> <span class="hljs-type">String</span> = <span class="hljs-string">&quot;Tab<span class="hljs-subst">\t</span>separated&quot;</span>
+<span class="hljs-keyword">let</span> <span class="hljs-variable">escapedQuote</span><span class="hljs-punctuation">:</span> <span class="hljs-type">String</span> = <span class="hljs-string">&quot;Quote: <span class="hljs-subst">\&quot;</span>&quot;</span>
+<span class="hljs-keyword">let</span> <span class="hljs-variable">escapedBackslash</span><span class="hljs-punctuation">:</span> <span class="hljs-type">String</span> = <span class="hljs-string">&quot;Backslash: <span class="hljs-subst">\\</span>&quot;</span>
+<span class="hljs-keyword">let</span> <span class="hljs-variable">escapedUnicode</span><span class="hljs-punctuation">:</span> <span class="hljs-type">String</span> = <span class="hljs-string">&quot;Unicode: <span class="hljs-subst">\u{4E2D}</span>&quot;</span>
+<span class="hljs-keyword">let</span> <span class="hljs-variable">escapedDollar</span><span class="hljs-punctuation">:</span> <span class="hljs-type">String</span> = <span class="hljs-string">&quot;Price: <span class="hljs-subst">\$</span>100&quot;</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">multilineString</span><span class="hljs-punctuation">:</span> <span class="hljs-type">String</span> = <span class="hljs-string">&quot;&quot;&quot;
+This is a
+multi-line
+string
+&quot;&quot;&quot;</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">tripleSingle</span><span class="hljs-punctuation">:</span> <span class="hljs-type">String</span> = <span class="hljs-string">&#x27;&#x27;&#x27;
+Also multi-line
+with single quotes
+&#x27;&#x27;&#x27;</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">name</span><span class="hljs-punctuation">:</span> <span class="hljs-type">String</span> = <span class="hljs-string">&quot;Alice&quot;</span>
+<span class="hljs-keyword">let</span> <span class="hljs-variable">greeting</span><span class="hljs-punctuation">:</span> <span class="hljs-type">String</span> = <span class="hljs-string">&quot;Hello, <span class="hljs-subst">${name}</span>!&quot;</span>
+<span class="hljs-keyword">let</span> <span class="hljs-variable">expressionInterp</span><span class="hljs-punctuation">:</span> <span class="hljs-type">String</span> = <span class="hljs-string">&quot;Result: <span class="hljs-subst">${<span class="hljs-number">1</span> + <span class="hljs-number">2</span>}</span>&quot;</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">rawString</span><span class="hljs-punctuation">:</span> <span class="hljs-type">String</span> = <span class="hljs-string">#&quot;No escaping here: \n \t &quot;#</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">rawWithQuotes</span><span class="hljs-punctuation">:</span> <span class="hljs-type">String</span> = <span class="hljs-string">#&quot;Contains &quot;quotes&quot; inside&quot;#</span> 
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">rawDouble</span><span class="hljs-punctuation">:</span> <span class="hljs-type">String</span> = <span class="hljs-string">##&quot;Contains &quot;# inside&quot;##</span>
+<span class="hljs-keyword">let</span> <span class="hljs-variable">rawTriple</span><span class="hljs-punctuation">:</span> <span class="hljs-type">String</span> = <span class="hljs-string">###&quot;Contains &quot;## inside&quot;###</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">regexPattern</span><span class="hljs-punctuation">:</span> <span class="hljs-type">String</span> = <span class="hljs-string">##&quot;\d+.\d+&quot;##</span>
+<span class="hljs-keyword">let</span> <span class="hljs-variable">pathPattern</span><span class="hljs-punctuation">:</span> <span class="hljs-type">String</span> = <span class="hljs-string">#&quot;C:\Users\name&quot;#</span> 
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">runeA</span><span class="hljs-punctuation">:</span> <span class="hljs-type">Rune</span> = <span class="hljs-string">&#x27;A&#x27;</span>
+<span class="hljs-keyword">let</span> <span class="hljs-variable">runeUnicode</span><span class="hljs-punctuation">:</span> <span class="hljs-type">Rune</span> = <span class="hljs-string">&#x27;<span class="hljs-subst">\u{4E2D}</span>&#x27;</span>
+<span class="hljs-keyword">let</span> <span class="hljs-variable">runeEscape</span><span class="hljs-punctuation">:</span> <span class="hljs-type">Rune</span> = <span class="hljs-string">&#x27;<span class="hljs-subst">\n</span>&#x27;</span>
+<span class="hljs-keyword">let</span> <span class="hljs-variable">rawRune</span><span class="hljs-punctuation">:</span> <span class="hljs-type">Rune</span> = <span class="hljs-string">r&#x27;\n&#x27;</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">byteLiteral</span><span class="hljs-punctuation">:</span> <span class="hljs-type">Rune</span> = <span class="hljs-string">b&#x27;A&#x27;</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">jString</span><span class="hljs-punctuation">:</span> <span class="hljs-type">String</span> = <span class="hljs-string">J&quot;Java-style string&quot;</span>

@@ -1,0 +1,38 @@
+let decimalInt: Int64 = 12345
+let hexInt: UInt64 = 0xDEADBEEF
+let binaryInt: Int8 = 0b10101010
+let octalInt: Int64 = 0o755
+
+let underscoreInt: Int64 = 1_000_000
+let underscoreHex: UInt64 = 0xFF_FF_FF
+
+let floatNormal: Float64 = 3.14
+let floatScientific: Float64 = 1.5e-10
+let floatScientificUpper: Float64 = 2.5E3
+
+let floatUnderscore: Float64 = 3.141_592_653
+let floatScientificUnderscore: Float64 = 1_2.5e-1_0
+
+let floatDotStart: Float64 = .5
+let floatDotEnd: Float64 = 3.
+
+let suffixI8: Int8 = 127i8
+let suffixI16: Int16 = 32000i16
+let suffixI32: Int32 = 2000000000i32
+let suffixI64: Int64 = 9000000000000i64
+let suffixU8: UInt8 = 255u8
+let suffixU16: UInt16 = 65000u16
+let suffixU32: UInt32 = 4000000000u32
+let suffixU64: UInt64 = 18000000000000u64
+
+let suffixF16: Float16 = 1.5f16
+let suffixF32: Float32 = 3.14f32
+let suffixF64: Float64 = 2.718f64
+
+let hexSuffix: UInt64 = 0xFFu64
+let binarySuffix: Int8 = 0b10101010i8
+let hexFloat: Float64 = 0x1.1p0
+
+let zero: Int64 = 0
+let negative: Int64 = -42
+let negativeFloat: Float64 = -3.14

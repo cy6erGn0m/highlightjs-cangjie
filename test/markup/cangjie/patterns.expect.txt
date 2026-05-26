@@ -1,0 +1,45 @@
+<span class="hljs-keyword">match</span> (value) {
+    case 0 =&gt; println(&quot;zero&quot;)
+    case 1 =&gt; println(&quot;one&quot;)
+    case _ =&gt; println(&quot;other&quot;)
+}
+
+<span class="hljs-keyword">match</span> (opt) {
+    case Some(v) =&gt; println(v)
+    case None =&gt; println(&quot;empty&quot;)
+}
+
+<span class="hljs-keyword">match</span> (tuple) {
+    case (0, 0) =&gt; println(&quot;origin&quot;)
+    case (x, 0) =&gt; println(&quot;x-axis: ${x}&quot;)
+    case (0, y) =&gt; println(&quot;y-axis: ${y}&quot;)
+    case (x, y) =&gt; println(&quot;point: ${x}, ${y}&quot;)
+}
+
+<span class="hljs-keyword">match</span> (list) {
+    case [] =&gt; println(&quot;empty&quot;)
+    case [first] =&gt; println(&quot;single: ${first}&quot;)
+    case [first, ...rest] =&gt; println(&quot;first: ${first}, rest: ${rest}&quot;)
+}
+
+<span class="hljs-keyword">match</span> (value) {
+    case v where v &gt; 0 =&gt; println(&quot;positive&quot;)
+    case v where v &lt; 0 =&gt; println(&quot;negative&quot;)
+    case _ =&gt; println(&quot;zero&quot;)
+}
+
+<span class="hljs-keyword">match</span> (expr) {
+    case a | b =&gt; println(&quot;a or b&quot;)
+    case c | d | e =&gt; println(&quot;c, d, or e&quot;)
+}
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">result</span> = <span class="hljs-keyword">match</span> (opt) {
+    case Some(v) =&gt; v
+    case None =&gt; 0
+}
+
+<span class="hljs-keyword">match</span> (complex) {
+    case Point(x, y) where x &gt; 0 &amp;&amp; y &gt; 0 =&gt; println(&quot;first quadrant&quot;)
+    case Point(x, y) where x &lt; 0 &amp;&amp; y &gt; 0 =&gt; println(&quot;second quadrant&quot;)
+    case _ =&gt; println(&quot;other&quot;)
+}

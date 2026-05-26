@@ -1,0 +1,26 @@
+{
+  "name": "highlightjs-cangjie",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Cangjie language syntax highlighting for highlight.js",
+  "main": "src/languages/cangjie.js",
+  "author": "Mashkov Sergey",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cy6ergn0m/highlightjs-cangjie.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cy6ergn0m/highlightjs-cangjie/issues"
+  },
+  "homepage": "https://github.com/cy6ergn0m/highlightjs-cangjie#readme",
+  "keywords": [
+    "cangjie",
+    "highlightjs",
+    "highlight.js",
+    "syntax-highlighting"
+  ],
+  "peerDependencies": {
+    "highlight.js": ">=10.0.0"
+  }
+}

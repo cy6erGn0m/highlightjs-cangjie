@@ -1,0 +1,38 @@
+<span class="hljs-keyword">let</span> <span class="hljs-variable">decimalInt</span><span class="hljs-punctuation">:</span> <span class="hljs-type">Int64</span> = <span class="hljs-number">12345</span>
+<span class="hljs-keyword">let</span> <span class="hljs-variable">hexInt</span><span class="hljs-punctuation">:</span> <span class="hljs-type">UInt64</span> = <span class="hljs-number">0xDEADBEEF</span>
+<span class="hljs-keyword">let</span> <span class="hljs-variable">binaryInt</span><span class="hljs-punctuation">:</span> <span class="hljs-type">Int8</span> = <span class="hljs-number">0b10101010</span>
+<span class="hljs-keyword">let</span> <span class="hljs-variable">octalInt</span><span class="hljs-punctuation">:</span> <span class="hljs-type">Int64</span> = <span class="hljs-number">0o755</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">underscoreInt</span><span class="hljs-punctuation">:</span> <span class="hljs-type">Int64</span> = <span class="hljs-number">1</span><span class="hljs-variable">_000_000</span>
+<span class="hljs-keyword">let</span> <span class="hljs-variable">underscoreHex</span><span class="hljs-punctuation">:</span> <span class="hljs-type">UInt64</span> = <span class="hljs-number">0xFF_FF_FF</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">floatNormal</span><span class="hljs-punctuation">:</span> <span class="hljs-type">Float64</span> = <span class="hljs-number">3.14</span>
+<span class="hljs-keyword">let</span> <span class="hljs-variable">floatScientific</span><span class="hljs-punctuation">:</span> <span class="hljs-type">Float64</span> = <span class="hljs-number">1.5e-10</span>
+<span class="hljs-keyword">let</span> <span class="hljs-variable">floatScientificUpper</span><span class="hljs-punctuation">:</span> <span class="hljs-type">Float64</span> = <span class="hljs-number">2.5E3</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">floatUnderscore</span><span class="hljs-punctuation">:</span> <span class="hljs-type">Float64</span> = <span class="hljs-number">3.141_592_653</span>
+<span class="hljs-keyword">let</span> <span class="hljs-variable">floatScientificUnderscore</span><span class="hljs-punctuation">:</span> <span class="hljs-type">Float64</span> = <span class="hljs-number">1_2.5e-1_0</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">floatDotStart</span><span class="hljs-punctuation">:</span> <span class="hljs-type">Float64</span> = <span class="hljs-number">.5</span>
+<span class="hljs-keyword">let</span> <span class="hljs-variable">floatDotEnd</span><span class="hljs-punctuation">:</span> <span class="hljs-type">Float64</span> = <span class="hljs-number">3</span>.
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">suffixI8</span><span class="hljs-punctuation">:</span> <span class="hljs-type">Int8</span> = <span class="hljs-number">127i8</span>
+<span class="hljs-keyword">let</span> <span class="hljs-variable">suffixI16</span><span class="hljs-punctuation">:</span> <span class="hljs-type">Int16</span> = <span class="hljs-number">32000i16</span>
+<span class="hljs-keyword">let</span> <span class="hljs-variable">suffixI32</span><span class="hljs-punctuation">:</span> <span class="hljs-type">Int32</span> = <span class="hljs-number">2000000000i32</span>
+<span class="hljs-keyword">let</span> <span class="hljs-variable">suffixI64</span><span class="hljs-punctuation">:</span> <span class="hljs-type">Int64</span> = <span class="hljs-number">9000000000000i64</span>
+<span class="hljs-keyword">let</span> <span class="hljs-variable">suffixU8</span><span class="hljs-punctuation">:</span> <span class="hljs-type">UInt8</span> = <span class="hljs-number">255u8</span>
+<span class="hljs-keyword">let</span> <span class="hljs-variable">suffixU16</span><span class="hljs-punctuation">:</span> <span class="hljs-type">UInt16</span> = <span class="hljs-number">65000u16</span>
+<span class="hljs-keyword">let</span> <span class="hljs-variable">suffixU32</span><span class="hljs-punctuation">:</span> <span class="hljs-type">UInt32</span> = <span class="hljs-number">4000000000u32</span>
+<span class="hljs-keyword">let</span> <span class="hljs-variable">suffixU64</span><span class="hljs-punctuation">:</span> <span class="hljs-type">UInt64</span> = <span class="hljs-number">18000000000000u64</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">suffixF16</span><span class="hljs-punctuation">:</span> <span class="hljs-type">Float16</span> = <span class="hljs-number">1.5f16</span>
+<span class="hljs-keyword">let</span> <span class="hljs-variable">suffixF32</span><span class="hljs-punctuation">:</span> <span class="hljs-type">Float32</span> = <span class="hljs-number">3.14f32</span>
+<span class="hljs-keyword">let</span> <span class="hljs-variable">suffixF64</span><span class="hljs-punctuation">:</span> <span class="hljs-type">Float64</span> = <span class="hljs-number">2.718f64</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">hexSuffix</span><span class="hljs-punctuation">:</span> <span class="hljs-type">UInt64</span> = <span class="hljs-number">0xFFu64</span>
+<span class="hljs-keyword">let</span> <span class="hljs-variable">binarySuffix</span><span class="hljs-punctuation">:</span> <span class="hljs-type">Int8</span> = <span class="hljs-number">0b10101010i8</span>
+<span class="hljs-keyword">let</span> <span class="hljs-variable">hexFloat</span><span class="hljs-punctuation">:</span> <span class="hljs-type">Float64</span> = <span class="hljs-number">0x1</span><span class="hljs-number">.1</span><span class="hljs-variable">p0</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">zero</span><span class="hljs-punctuation">:</span> <span class="hljs-type">Int64</span> = <span class="hljs-number">0</span>
+<span class="hljs-keyword">let</span> <span class="hljs-variable">negative</span><span class="hljs-punctuation">:</span> <span class="hljs-type">Int64</span> = <span class="hljs-operator">-</span><span class="hljs-number">42</span>
+<span class="hljs-keyword">let</span> <span class="hljs-variable">negativeFloat</span><span class="hljs-punctuation">:</span> <span class="hljs-type">Float64</span> = <span class="hljs-operator">-</span><span class="hljs-number">3.14</span>

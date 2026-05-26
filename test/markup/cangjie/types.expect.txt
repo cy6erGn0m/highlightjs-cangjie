@@ -1,0 +1,84 @@
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Point</span> {
+    let x: Int64
+    let y: Int64
+    init(x: Int64, y: Int64) {
+        this.x = x
+        this.y = y
+    }
+    func distance(): Float64 {
+        return 0.0
+    }
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">PublicClass</span> {
+    let value: Int64
+}
+
+<span class="hljs-keyword">sealed</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">SealedClass</span> {}
+<span class="hljs-keyword">open</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">OpenClass</span> {}
+<span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">AbstractClass</span> {}
+
+<span class="hljs-keyword">struct</span> <span class="hljs-title class_">Rectangle</span> {
+    let width: Int64
+    let height: Int64
+}
+
+<span class="hljs-variable">mut</span> <span class="hljs-keyword">struct</span> <span class="hljs-title class_">MutableStruct</span> {
+    var data: Int64
+}
+
+<span class="hljs-keyword">interface</span> <span class="hljs-title class_">Shape</span> {
+    func area(): Float64
+    func perimeter(): Float64
+}
+
+<span class="hljs-keyword">sealed</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">SealedInterface</span> {}
+<span class="hljs-keyword">open</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">OpenInterface</span> {}
+
+<span class="hljs-keyword">enum</span> <span class="hljs-title class_">Color</span> {
+    Red
+    Green
+    Blue
+}
+
+<span class="hljs-keyword">enum</span> <span class="hljs-title class_">Option</span>&lt;T&gt; {
+    Some(T)
+    None
+}
+
+<span class="hljs-keyword">extend</span> <span class="hljs-title class_">Point</span> <span class="hljs-operator">&lt;:</span> <span class="hljs-type">Shape</span> {
+    func area(): Float64 {
+        return 0.0
+    }
+}
+
+<span class="hljs-keyword">extend</span> <span class="hljs-title class_">Int64</span> <span class="hljs-operator">&lt;:</span> Comparable&lt;<span class="hljs-type">Int64</span>&gt; {
+    func compareTo(other: Int64): Int64 {
+        return this - other
+    }
+}
+
+<span class="hljs-keyword">prop</span> <span class="hljs-property">description</span><span class="hljs-punctuation">:</span> <span class="hljs-type">String</span> {
+    get() { return &quot;A shape&quot; }
+}
+
+<span class="hljs-keyword">mut</span> <span class="hljs-keyword">prop</span> <span class="hljs-property">mutableProp</span><span class="hljs-punctuation">:</span> <span class="hljs-type">Int64</span> {
+    get() { return this.value }
+    set(v: Int64) { this.value = v }
+}
+
+<span class="hljs-keyword">type</span> <span class="hljs-title">PointPair</span> = (Point, Point)
+<span class="hljs-keyword">type</span> <span class="hljs-title">IntList</span> = Array&lt;<span class="hljs-type">Int64</span>&gt;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">GenericClass</span>&lt;T&gt; {
+    let value: T
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">MultiGeneric</span>&lt;T<span class="hljs-punctuation">,</span> U&gt; {
+    let first: T
+    let second: U
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Constrained</span>&lt;T&gt; <span class="hljs-keyword">where</span> <span class="hljs-type">T</span> <span class="hljs-operator">&lt;:</span> Comparable&lt;T&gt; {
+    let item: T
+}

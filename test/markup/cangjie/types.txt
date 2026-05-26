@@ -1,0 +1,84 @@
+class Point {
+    let x: Int64
+    let y: Int64
+    init(x: Int64, y: Int64) {
+        this.x = x
+        this.y = y
+    }
+    func distance(): Float64 {
+        return 0.0
+    }
+}
+
+public class PublicClass {
+    let value: Int64
+}
+
+sealed class SealedClass {}
+open class OpenClass {}
+abstract class AbstractClass {}
+
+struct Rectangle {
+    let width: Int64
+    let height: Int64
+}
+
+mut struct MutableStruct {
+    var data: Int64
+}
+
+interface Shape {
+    func area(): Float64
+    func perimeter(): Float64
+}
+
+sealed interface SealedInterface {}
+open interface OpenInterface {}
+
+enum Color {
+    Red
+    Green
+    Blue
+}
+
+enum Option<T> {
+    Some(T)
+    None
+}
+
+extend Point <: Shape {
+    func area(): Float64 {
+        return 0.0
+    }
+}
+
+extend Int64 <: Comparable<Int64> {
+    func compareTo(other: Int64): Int64 {
+        return this - other
+    }
+}
+
+prop description: String {
+    get() { return "A shape" }
+}
+
+mut prop mutableProp: Int64 {
+    get() { return this.value }
+    set(v: Int64) { this.value = v }
+}
+
+type PointPair = (Point, Point)
+type IntList = Array<Int64>
+
+class GenericClass<T> {
+    let value: T
+}
+
+class MultiGeneric<T, U> {
+    let first: T
+    let second: U
+}
+
+class Constrained<T> where T <: Comparable<T> {
+    let item: T
+}

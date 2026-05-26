@@ -1,0 +1,65 @@
+macro package example.macros
+
+import std.ast.*
+
+public macro dprint(input: Tokens): Tokens {
+    let inputStr = input.toString()
+    let result = quote(
+        print($(inputStr) + " = ")
+        println($(input))
+    )
+    return result
+}
+
+public macro WithModifier(attr: Tokens, input: Tokens): Tokens {
+    return attr + input
+}
+
+macro simple(input: Tokens): Tokens {
+    return input
+}
+
+public macro package public.macro.pkg
+
+public macro publicMacro(input: Tokens): Tokens {
+    return input
+}
+
+protected macro protectedMacro(input: Tokens): Tokens {
+    return input
+}
+
+private macro privateMacro(input: Tokens): Tokens {
+    return input
+}
+
+internal macro internalMacro(input: Tokens): Tokens {
+    return input
+}
+
+main() {
+    let exprTokens = quote(1 + 2)
+    let funcTokens = quote(func foo() { return 42 })
+    
+    let name = "myVar"
+    let value = quote(100)
+    let varDecl = quote(let $(name) = $(value))
+    
+    let a = quote(x)
+    let b = quote(y)
+    let combined = quote($(a) + $(b))
+    
+    let simpleInterp = quote($name)
+    
+    let escapedDollar = quote(\$(literal))
+    let escapedParen = quote(\()
+    let escapedAt = quote(\@)
+    
+    let tokenList = Tokens([
+        Token(TokenKind.INTEGER_LITERAL, "1"),
+        Token(TokenKind.ADD),
+        Token(TokenKind.INTEGER_LITERAL, "2")
+    ])
+    
+    let tokens = quote(arr = $(tokenList))
+}
