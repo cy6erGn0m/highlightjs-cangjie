@@ -1,8 +1,8 @@
-<span class="hljs-keyword">macro</span> <span class="hljs-keyword">package</span> <span class="hljs-title namespace_">example.macros</span>
+<span class="hljs-keyword">macro</span> <span class="hljs-keyword">package</span> <span class="hljs-title namespace_">example.macros</span><span class="hljs-keyword">
 
-<span class="hljs-keyword">import</span> <span class="hljs-title namespace_">std.ast</span><span class="hljs-operator">.*</span>
+</span><span class="hljs-keyword">import</span> <span class="hljs-title namespace_">std.ast</span><span class="hljs-operator">.*</span>
 
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">macro</span> <span class="hljs-title function_">dprint</span>(<span class="hljs-variable parameter_">input:</span> Tokens)<span class="hljs-punctuation">:</span> <span class="hljs-type">Tokens</span> {
+<span class="hljs-keyword">public </span><span class="hljs-keyword">macro</span> <span class="hljs-title function_">dprint</span>(<span class="hljs-variable parameter_">input:</span> Tokens)<span class="hljs-punctuation">:</span> <span class="hljs-type">Tokens</span> {
     <span class="hljs-keyword">let</span> <span class="hljs-variable">inputStr</span> = <span class="hljs-variable">input</span>.<span class="hljs-title function_">toString</span>()
     <span class="hljs-keyword">let</span> <span class="hljs-variable">result</span> = <span class="hljs-title function_ invoke__">quote</span>(
         <span class="hljs-title function_ invoke__">print</span>($(<span class="hljs-variable">inputStr</span>) <span class="hljs-operator">+</span> <span class="hljs-string">&quot; = &quot;</span>)
@@ -11,29 +11,29 @@
     <span class="hljs-keyword">return</span> <span class="hljs-variable">result</span>
 }
 
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">macro</span> <span class="hljs-title function_">WithModifier</span>(<span class="hljs-variable parameter_">attr:</span> Tokens, <span class="hljs-variable parameter_">input:</span> Tokens)<span class="hljs-punctuation">:</span> <span class="hljs-type">Tokens</span> {
+<span class="hljs-keyword">public </span><span class="hljs-keyword">macro</span> <span class="hljs-title function_">WithModifier</span>(<span class="hljs-variable parameter_">attr:</span> Tokens, <span class="hljs-variable parameter_">input:</span> Tokens)<span class="hljs-punctuation">:</span> <span class="hljs-type">Tokens</span> {
     <span class="hljs-keyword">return</span> <span class="hljs-variable">attr</span> <span class="hljs-operator">+</span> <span class="hljs-variable">input</span>
-}
+}<span class="hljs-keyword">
 
-<span class="hljs-keyword">macro</span> <span class="hljs-title function_">simple</span>(<span class="hljs-variable parameter_">input:</span> Tokens)<span class="hljs-punctuation">:</span> <span class="hljs-type">Tokens</span> {
+</span><span class="hljs-keyword">macro</span> <span class="hljs-title function_">simple</span>(<span class="hljs-variable parameter_">input:</span> Tokens)<span class="hljs-punctuation">:</span> <span class="hljs-type">Tokens</span> {
     <span class="hljs-keyword">return</span> <span class="hljs-variable">input</span>
 }
 
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">macro</span> <span class="hljs-keyword">package</span> <span class="hljs-title namespace_">public.macro.pkg</span>
+<span class="hljs-keyword">public </span><span class="hljs-keyword">macro</span> <span class="hljs-keyword">package</span> <span class="hljs-title namespace_">public.macro.pkg</span>
 
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">macro</span> <span class="hljs-title function_">publicMacro</span>(<span class="hljs-variable parameter_">input:</span> Tokens)<span class="hljs-punctuation">:</span> <span class="hljs-type">Tokens</span> {
+<span class="hljs-keyword">public </span><span class="hljs-keyword">macro</span> <span class="hljs-title function_">publicMacro</span>(<span class="hljs-variable parameter_">input:</span> Tokens)<span class="hljs-punctuation">:</span> <span class="hljs-type">Tokens</span> {
     <span class="hljs-keyword">return</span> <span class="hljs-variable">input</span>
 }
 
-<span class="hljs-keyword">protected</span> <span class="hljs-keyword">macro</span> <span class="hljs-title function_">protectedMacro</span>(<span class="hljs-variable parameter_">input:</span> Tokens)<span class="hljs-punctuation">:</span> <span class="hljs-type">Tokens</span> {
+<span class="hljs-keyword">protected </span><span class="hljs-keyword">macro</span> <span class="hljs-title function_">protectedMacro</span>(<span class="hljs-variable parameter_">input:</span> Tokens)<span class="hljs-punctuation">:</span> <span class="hljs-type">Tokens</span> {
     <span class="hljs-keyword">return</span> <span class="hljs-variable">input</span>
 }
 
-<span class="hljs-keyword">private</span> <span class="hljs-keyword">macro</span> <span class="hljs-title function_">privateMacro</span>(<span class="hljs-variable parameter_">input:</span> Tokens)<span class="hljs-punctuation">:</span> <span class="hljs-type">Tokens</span> {
+<span class="hljs-keyword">private </span><span class="hljs-keyword">macro</span> <span class="hljs-title function_">privateMacro</span>(<span class="hljs-variable parameter_">input:</span> Tokens)<span class="hljs-punctuation">:</span> <span class="hljs-type">Tokens</span> {
     <span class="hljs-keyword">return</span> <span class="hljs-variable">input</span>
 }
 
-<span class="hljs-keyword">internal</span> <span class="hljs-keyword">macro</span> <span class="hljs-title function_">internalMacro</span>(<span class="hljs-variable parameter_">input:</span> Tokens)<span class="hljs-punctuation">:</span> <span class="hljs-type">Tokens</span> {
+<span class="hljs-keyword">internal </span><span class="hljs-keyword">macro</span> <span class="hljs-title function_">internalMacro</span>(<span class="hljs-variable parameter_">input:</span> Tokens)<span class="hljs-punctuation">:</span> <span class="hljs-type">Tokens</span> {
     <span class="hljs-keyword">return</span> <span class="hljs-variable">input</span>
 }
 

@@ -1,84 +1,84 @@
 <span class="hljs-keyword">class</span> <span class="hljs-title class_">Point</span> {
     <span class="hljs-keyword">let</span> <span class="hljs-variable">x</span>: <span class="hljs-type">Int64</span>
-    <span class="hljs-keyword">let</span> <span class="hljs-variable">y</span>: <span class="hljs-type">Int64</span>
-    <span class="hljs-keyword">init(<span class="hljs-variable parameter_">x:</span> Int64, <span class="hljs-variable parameter_">y:</span> Int64)</span> {
+    <span class="hljs-keyword">let</span> <span class="hljs-variable">y</span>: <span class="hljs-type">Int64</span><span class="hljs-keyword">
+    </span><span class="hljs-keyword">init</span>(<span class="hljs-variable parameter_">x:</span> Int64, <span class="hljs-variable parameter_">y:</span> Int64) {
         <span class="hljs-variable">this</span><span class="hljs-property">.x</span> = <span class="hljs-variable">x</span>
         <span class="hljs-variable">this</span><span class="hljs-property">.y</span> = <span class="hljs-variable">y</span>
-    }
-    <span class="hljs-keyword">func</span> <span class="hljs-title function_">distance</span>()<span class="hljs-punctuation">:</span> <span class="hljs-type">Float64</span> {
+    }<span class="hljs-keyword">
+    </span><span class="hljs-keyword">func</span> <span class="hljs-title function_">distance</span>()<span class="hljs-punctuation">:</span> <span class="hljs-type">Float64</span> {
         <span class="hljs-keyword">return</span> <span class="hljs-number">0.0</span>
     }
 }
 
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">PublicClass</span> {
+<span class="hljs-keyword">public </span><span class="hljs-keyword">class</span> <span class="hljs-title class_">PublicClass</span> {
     <span class="hljs-keyword">let</span> <span class="hljs-variable">value</span>: <span class="hljs-type">Int64</span>
 }
 
-<span class="hljs-keyword">sealed</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">SealedClass</span> {}
-<span class="hljs-keyword">open</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">OpenClass</span> {}
-<span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">AbstractClass</span> {}
+<span class="hljs-keyword">sealed </span><span class="hljs-keyword">class</span> <span class="hljs-title class_">SealedClass</span> {}
+<span class="hljs-keyword">open </span><span class="hljs-keyword">class</span> <span class="hljs-title class_">OpenClass</span> {}
+<span class="hljs-keyword">abstract </span><span class="hljs-keyword">class</span> <span class="hljs-title class_">AbstractClass</span> {}<span class="hljs-keyword">
 
-<span class="hljs-keyword">struct</span> <span class="hljs-title class_">Rectangle</span> {
+</span><span class="hljs-keyword">struct</span> <span class="hljs-title class_">Rectangle</span> {
     <span class="hljs-keyword">let</span> <span class="hljs-variable">width</span>: <span class="hljs-type">Int64</span>
     <span class="hljs-keyword">let</span> <span class="hljs-variable">height</span>: <span class="hljs-type">Int64</span>
 }
 
-<span class="hljs-variable">mut</span> <span class="hljs-keyword">struct</span> <span class="hljs-title class_">MutableStruct</span> {
+<span class="hljs-keyword">mut </span><span class="hljs-keyword">struct</span> <span class="hljs-title class_">MutableStruct</span> {
     <span class="hljs-keyword">var</span> <span class="hljs-variable">data</span>: <span class="hljs-type">Int64</span>
+}<span class="hljs-keyword">
+
+</span><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Shape</span> {<span class="hljs-keyword">
+    </span><span class="hljs-keyword">func</span> <span class="hljs-title function_">area</span>()<span class="hljs-punctuation">:</span> <span class="hljs-type">Float64</span><span class="hljs-keyword">
+    </span><span class="hljs-keyword">func</span> <span class="hljs-title function_">perimeter</span>()<span class="hljs-punctuation">:</span> <span class="hljs-type">Float64</span>
 }
 
-<span class="hljs-keyword">interface</span> <span class="hljs-title class_">Shape</span> {
-    <span class="hljs-keyword">func</span> <span class="hljs-title function_">area</span>()<span class="hljs-punctuation">:</span> <span class="hljs-type">Float64</span>
-    <span class="hljs-keyword">func</span> <span class="hljs-title function_">perimeter</span>()<span class="hljs-punctuation">:</span> <span class="hljs-type">Float64</span>
-}
+<span class="hljs-keyword">sealed </span><span class="hljs-keyword">interface</span> <span class="hljs-title class_">SealedInterface</span> {}
+<span class="hljs-keyword">open </span><span class="hljs-keyword">interface</span> <span class="hljs-title class_">OpenInterface</span> {}<span class="hljs-keyword">
 
-<span class="hljs-keyword">sealed</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">SealedInterface</span> {}
-<span class="hljs-keyword">open</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">OpenInterface</span> {}
-
-<span class="hljs-keyword">enum</span> <span class="hljs-title class_">Color</span> {
+</span><span class="hljs-keyword">enum</span> <span class="hljs-title class_">Color</span> {
     <span class="hljs-type">Red</span>
     <span class="hljs-type">Green</span>
     <span class="hljs-type">Blue</span>
-}
+}<span class="hljs-keyword">
 
-<span class="hljs-keyword">enum</span> <span class="hljs-title class_">Option</span>&lt;T&gt; {
+</span><span class="hljs-keyword">enum</span> <span class="hljs-title class_">Option</span>&lt;T&gt; {
     <span class="hljs-type">Some</span>(<span class="hljs-type">T</span>)
     <span class="hljs-type">None</span>
-}
+}<span class="hljs-keyword">
 
-<span class="hljs-keyword">extend</span> <span class="hljs-title class_">Point</span> <span class="hljs-operator">&lt;:</span> <span class="hljs-type">Shape</span> {
-    <span class="hljs-keyword">func</span> <span class="hljs-title function_">area</span>()<span class="hljs-punctuation">:</span> <span class="hljs-type">Float64</span> {
+</span><span class="hljs-keyword">extend</span> <span class="hljs-title class_">Point</span> <span class="hljs-operator">&lt;:</span> <span class="hljs-type">Shape</span> {<span class="hljs-keyword">
+    </span><span class="hljs-keyword">func</span> <span class="hljs-title function_">area</span>()<span class="hljs-punctuation">:</span> <span class="hljs-type">Float64</span> {
         <span class="hljs-keyword">return</span> <span class="hljs-number">0.0</span>
     }
-}
+}<span class="hljs-keyword">
 
-<span class="hljs-keyword">extend</span> <span class="hljs-title class_">Int64</span> <span class="hljs-operator">&lt;:</span> Comparable&lt;<span class="hljs-type">Int64</span>&gt; {
-    <span class="hljs-keyword">func</span> <span class="hljs-title function_">compareTo</span>(<span class="hljs-variable parameter_">other:</span> Int64)<span class="hljs-punctuation">:</span> <span class="hljs-type">Int64</span> {
+</span><span class="hljs-keyword">extend</span> <span class="hljs-title class_">Int64</span> <span class="hljs-operator">&lt;:</span> Comparable&lt;<span class="hljs-type">Int64</span>&gt; {<span class="hljs-keyword">
+    </span><span class="hljs-keyword">func</span> <span class="hljs-title function_">compareTo</span>(<span class="hljs-variable parameter_">other:</span> Int64)<span class="hljs-punctuation">:</span> <span class="hljs-type">Int64</span> {
         <span class="hljs-keyword">return</span> <span class="hljs-variable">this</span> <span class="hljs-operator">-</span> <span class="hljs-variable">other</span>
     }
-}
+}<span class="hljs-keyword">
 
-<span class="hljs-keyword">prop</span> <span class="hljs-property">description</span><span class="hljs-punctuation">:</span> <span class="hljs-type">String</span> {
+</span><span class="hljs-keyword">prop</span> <span class="hljs-property">description</span><span class="hljs-punctuation">:</span> <span class="hljs-type">String</span> {
     <span class="hljs-title function_ invoke__">get</span>() { <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;A shape&quot;</span> }
 }
 
-<span class="hljs-keyword">mut</span> <span class="hljs-keyword">prop</span> <span class="hljs-property">mutableProp</span><span class="hljs-punctuation">:</span> <span class="hljs-type">Int64</span> {
+<span class="hljs-keyword">mut </span><span class="hljs-keyword">prop</span> <span class="hljs-property">mutableProp</span><span class="hljs-punctuation">:</span> <span class="hljs-type">Int64</span> {
     <span class="hljs-title function_ invoke__">get</span>() { <span class="hljs-keyword">return</span> <span class="hljs-variable">this</span><span class="hljs-property">.value</span> }
     <span class="hljs-title function_ invoke__">set</span>(<span class="hljs-variable">v</span>: <span class="hljs-type">Int64</span>) { <span class="hljs-variable">this</span><span class="hljs-property">.value</span> = <span class="hljs-variable">v</span> }
 }
 
 <span class="hljs-keyword">type</span> <span class="hljs-title">PointPair</span> = (<span class="hljs-type">Point</span><span class="hljs-punctuation">,</span> <span class="hljs-type">Point</span>)
-<span class="hljs-keyword">type</span> <span class="hljs-title">IntList</span> = Array&lt;<span class="hljs-type">Int64</span>&gt;
+<span class="hljs-keyword">type</span> <span class="hljs-title">IntList</span> = Array&lt;<span class="hljs-type">Int64</span>&gt;<span class="hljs-keyword">
 
-<span class="hljs-keyword">class</span> <span class="hljs-title class_">GenericClass</span>&lt;T&gt; {
+</span><span class="hljs-keyword">class</span> <span class="hljs-title class_">GenericClass</span>&lt;T&gt; {
     <span class="hljs-keyword">let</span> <span class="hljs-variable">value</span>: <span class="hljs-type">T</span>
-}
+}<span class="hljs-keyword">
 
-<span class="hljs-keyword">class</span> <span class="hljs-title class_">MultiGeneric</span>&lt;T<span class="hljs-punctuation">,</span> U&gt; {
+</span><span class="hljs-keyword">class</span> <span class="hljs-title class_">MultiGeneric</span>&lt;T<span class="hljs-punctuation">,</span> U&gt; {
     <span class="hljs-keyword">let</span> <span class="hljs-variable">first</span>: <span class="hljs-type">T</span>
     <span class="hljs-keyword">let</span> <span class="hljs-variable">second</span>: <span class="hljs-type">U</span>
-}
+}<span class="hljs-keyword">
 
-<span class="hljs-keyword">class</span> <span class="hljs-title class_">Constrained</span>&lt;T&gt; <span class="hljs-keyword">where</span> <span class="hljs-type">T</span> <span class="hljs-operator">&lt;:</span> Comparable&lt;T&gt; {
+</span><span class="hljs-keyword">class</span> <span class="hljs-title class_">Constrained</span>&lt;T&gt; <span class="hljs-keyword">where</span> <span class="hljs-type">T</span> <span class="hljs-operator">&lt;:</span> Comparable&lt;T&gt; {
     <span class="hljs-keyword">let</span> <span class="hljs-variable">item</span>: <span class="hljs-type">T</span>
 }

@@ -179,12 +179,13 @@ export default function(hljs) {
 
   const PACKAGE_DECL = {
     begin: [
-      /\b(?:public|protected|internal)?\s*/,
+      /(?:\b(public|protected|internal))?\s*/,
       PACKAGE_KEYWORD.match,
       /\s+/,
       PACKAGE_NAME.match
     ],
     beginScope: {
+      1: 'keyword',
       2: 'keyword',
       4: 'title.namespace'
     },
@@ -193,11 +194,11 @@ export default function(hljs) {
 
   const IMPORT_DECL = {
     begin: [
-      /\b(?:public|private|protected|internal)?\s*/,
+      /(?:\b(public|private|protected|internal))?\s*/,
       /\bimport\b/,
       /\s+/
     ],
-    beginScope: { 2: 'keyword' },
+    beginScope: { 1: 'keyword', 2: 'keyword' },
     contains: [
       {
         scope: 'title.namespace',
@@ -275,12 +276,13 @@ export default function(hljs) {
 
   const FUNCTION_DECL = {
     begin: [
-      /\b(?:public|private|protected|internal|override|redef|mut|static|abstract|sealed|open)?\s*/,
+      /(?:\b(public|private|protected|internal|override|redef|mut|static|abstract|sealed|open))?\s*/,
       /\b(?:func|macro)\b/,
       /\s+/,
       /[A-Za-z_][A-Za-z0-9_]*/
     ],
     beginScope: {
+      1: 'keyword',
       2: 'keyword',
       4: 'title.function'
     },
@@ -297,12 +299,13 @@ export default function(hljs) {
 
   const CLASS_DECL = {
     begin: [
-      /\b(?:public|private|protected|internal|sealed|open|abstract)?\s*/,
+      /(?:\b(public|private|protected|internal|sealed|open|abstract|mut))?\s*/,
       /\b(?:class|struct|interface|enum|extend)\b/,
       /\s+/,
       /[A-Za-z_][A-Za-z0-9_]*/
     ],
     beginScope: {
+      1: 'keyword',
       2: 'keyword',
       4: 'title.class'
     },
@@ -318,12 +321,13 @@ export default function(hljs) {
 
   const PROP_DECL = {
     begin: [
-      /\b(?:public|private|protected|internal|mut|static)?\s*/,
+      /(?:\b(public|private|protected|internal|mut|static))?\s*/,
       /\bprop\b/,
       /\s+/,
       /[A-Za-z_][A-Za-z0-9_]*/
     ],
     beginScope: {
+      1: 'keyword',
       2: 'keyword',
       4: 'property'
     }
@@ -343,26 +347,33 @@ export default function(hljs) {
 
   const VAR_DECL = {
     begin: [
-      /\b(?:public|private|protected|internal)?\s*/,
-      /\b(?:let|var|const)\b/,
+      /(?:\b(public|private|protected|internal)\s*)?/,
+      /\b(let|var|const)\b/,
       /\s+/,
       /[A-Za-z_][A-Za-z0-9_]*/
     ],
     beginScope: {
+      1: 'keyword',
       2: 'keyword',
       4: 'variable'
     }
   };
 
   const INIT_DECL = {
-    begin: /~?init(?=\s*\()/,
-    scope: 'keyword',
+    begin: [
+      /(?:\b(public|private|protected|internal))?\s*/,
+      /~?init(?=\s*\()/
+    ],
+    beginScope: {
+      1: 'keyword',
+      2: 'keyword'
+    },
     contains: [ PARAM_LIST ]
   };
 
   const MACRO_PACKAGE_DECL = {
     begin: [
-      /\b(?:public|private|protected|internal)?\s*/,
+      /(?:\b(public|private|protected|internal))?\s*/,
       /\bmacro\b/,
       /\s+/,
       /\bpackage\b/,
@@ -370,6 +381,7 @@ export default function(hljs) {
       /[A-Za-z_][A-Za-z0-9_]*(?:\.[A-Za-z_][A-Za-z0-9_]*)*/
     ],
     beginScope: {
+      1: 'keyword',
       2: 'keyword',
       4: 'keyword',
       6: 'title.namespace'

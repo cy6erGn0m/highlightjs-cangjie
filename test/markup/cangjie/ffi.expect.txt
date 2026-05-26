@@ -2,15 +2,15 @@
 <span class="hljs-keyword">foreign</span> <span class="hljs-keyword">func</span> <span class="hljs-title function_">free</span>(<span class="hljs-variable">ptr</span><span class="hljs-punctuation">:</span> CPointer&lt;<span class="hljs-type">Unit</span>&gt;)<span class="hljs-punctuation">:</span> <span class="hljs-type">Unit</span>
 <span class="hljs-keyword">foreign</span> <span class="hljs-keyword">func</span> <span class="hljs-title function_">strlen</span>(<span class="hljs-variable">s</span><span class="hljs-punctuation">:</span> CPointer&lt;<span class="hljs-type">Byte</span>&gt;)<span class="hljs-punctuation">:</span> <span class="hljs-type">UIntNative</span>
 
-<span class="hljs-variable">foreign</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ForeignClass</span> {}
-<span class="hljs-variable">foreign</span> <span class="hljs-keyword">struct</span> <span class="hljs-title class_">ForeignStruct</span> {}
+<span class="hljs-variable">foreign</span><span class="hljs-keyword"> </span><span class="hljs-keyword">class</span> <span class="hljs-title class_">ForeignClass</span> {}
+<span class="hljs-variable">foreign</span><span class="hljs-keyword"> </span><span class="hljs-keyword">struct</span> <span class="hljs-title class_">ForeignStruct</span> {}
 
 <span class="hljs-keyword">unsafe</span> {
     <span class="hljs-keyword">let</span> <span class="hljs-variable">ptr</span> = <span class="hljs-title function_ invoke__">malloc</span>(<span class="hljs-number">1024</span>)
     <span class="hljs-title function_ invoke__">free</span>(<span class="hljs-variable">ptr</span>)
-}
+}<span class="hljs-keyword">
 
-<span class="hljs-keyword">func</span> <span class="hljs-title function_">unsafeExample</span>()<span class="hljs-punctuation">:</span> <span class="hljs-type">Unit</span> {
+</span><span class="hljs-keyword">func</span> <span class="hljs-title function_">unsafeExample</span>()<span class="hljs-punctuation">:</span> <span class="hljs-type">Unit</span> {
     <span class="hljs-keyword">unsafe</span> {
         <span class="hljs-keyword">let</span> <span class="hljs-variable">data</span> = <span class="hljs-type">CPointer</span>&lt;<span class="hljs-type">Int64</span>&gt;.<span class="hljs-title function_">alloc</span>(<span class="hljs-number">10</span>)
         <span class="hljs-variable">data</span>[<span class="hljs-number">0</span>] = <span class="hljs-number">42</span>
