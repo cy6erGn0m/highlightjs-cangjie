@@ -15,7 +15,7 @@
  * @param x - the input value
  * @return the result
  */</span>
-<span class="hljs-keyword">func</span> <span class="hljs-title function_">documented</span>(<span class="hljs-variable parameter_">x:</span> Int64)<span class="hljs-punctuation">:</span> <span class="hljs-type">Int64</span> { x * 2 }
+<span class="hljs-keyword">func</span> <span class="hljs-title function_">documented</span>(<span class="hljs-variable parameter_">x:</span> Int64)<span class="hljs-punctuation">:</span> <span class="hljs-type">Int64</span> { <span class="hljs-variable">x</span> <span class="hljs-operator">*</span> <span class="hljs-number">2</span> }
 
 <span class="hljs-comment">/** Another doc comment */</span>
 
@@ -43,8 +43,8 @@
   a function
 */</span>
 <span class="hljs-keyword">func</span> <span class="hljs-title function_">withComment</span>()<span class="hljs-punctuation">:</span> <span class="hljs-type">Unit</span> {
-    // Inside function
-    /* Also inside */
+    <span class="hljs-comment">// Inside function</span>
+    <span class="hljs-comment">/* Also inside */</span>
 }
 
 <span class="hljs-comment">/* <span class="hljs-comment">/* deeply <span class="hljs-comment">/* nested */</span> */</span> comment */</span>

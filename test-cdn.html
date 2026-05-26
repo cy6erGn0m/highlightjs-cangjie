@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cangjie CDN Test</title>
+  
+  <!-- Highlight.js core from CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+  
+  <!-- Cangjie language from your GitHub repo via jsdelivr -->
+  <script src="https://cdn.jsdelivr.net/gh/cy6ergn0m/highlightjs-cangjie@main/dist/cangjie.min.js"></script>
+  
+  <!-- Highlight.js theme -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github-dark.min.css">
+  
+  <style>
+    body {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 20px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #1a1a2e;
+      color: #eee;
+    }
+    h1, h2 {
+      color: #4a9eff;
+    }
+    pre {
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+    code {
+      font-family: 'Fira Code', 'Consolas', monospace;
+    }
+    .test-label {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Cangjie Language CDN Test</h1>
+  <p>Testing <strong>highlightjs-cangjie</strong> CDN distributable.</p>
+  
+  <h2>1. Basic Syntax</h2>
+  <div class="test-label">Functions, types, variables</div>
+  <pre><code class="language-cangjie">
+package example
+
+func main() {
+    let x: Int64 = 42
+    var name: String = "Cangjie"
+    println("Hello, ${name}!")
+    println("Value: ${x}")
+}
+  </code></pre>
+  
+  <h2>2. Strings and Raw Strings</h2>
+  <div class="test-label">Regular, raw, multi-line strings</div>
+  <pre><code class="language-cangjie">
+let regular = "Hello\nWorld"
+let raw = #"No escape\nneeded"#
+let multiline = """
+    Multi-line
+    string here
+    """
+let raw_multi = ##"Raw ## multi-line"##
+let j_string = J"这是中文JSON字符串"
+  </code></pre>
+  
+  <h2>3. Numbers</h2>
+  <div class="test-label">Integers, floats, hex, binary with suffixes</div>
+  <pre><code class="language-cangjie">
+let decimal = 12345
+let hex = 0xDEADBEEF
+let binary = 0b10101010
+let octal = 0o755
+let float1 = 3.14159f32
+let float2 = 2.71828e10f64
+let typed = 100i64
+let underscore = 1_000_000
+  </code></pre>
+  
+  <h2>4. Classes and Structs</h2>
+  <div class="test-label">Class definitions with generics</div>
+  <pre><code class="language-cangjie">
+public class Box&lt;T&gt; where T <: Comparable&lt;T&gt; {
+    private let value: T
+    
+    public init(value: T) {
+        this.value = value
+    }
+    
+    public func getValue(): T {
+        return value
+    }
+}
+
+struct Point {
+    let x: Float64
+    let y: Float64
+    
+    func distance(): Float64 {
+        return sqrt(x * x + y * y)
+    }
+}
+  </code></pre>
+  
+  <h2>5. Annotations</h2>
+  <div class="test-label">Annotation usage</div>
+  <pre><code class="language-cangjie">
+@Deprecated[message: "Use newMethod instead"]
+func oldMethod() {}
+
+@Timeout[duration: 5000]
+func longOperation() {}
+
+@!unsafe
+func lowLevelAccess() {}
+  </code></pre>
+  
+  <h2>6. Pattern Matching</h2>
+  <div class="test-label">Match expressions</div>
+  <pre><code class="language-cangjie">
+func describe(x: Int64): String {
+    match (x) {
+        case 0 => "zero"
+        case 1 => "one"
+        case n if n < 0 => "negative"
+        case n if n > 100 => "large"
+        case _ => "other"
+    }
+}
+  </code></pre>
+  
+  <h2>7. Macros</h2>
+  <div class="test-label">Macro definitions and quote expressions</div>
+  <pre><code class="language-cangjie">
+macro package example_macros
+
+macro func logging(func_name: String) {
+    quote(
+        func ${func_name}() {
+            println("Entering ${func_name}")
+            let result = ${func_name}_impl()
+            println("Exiting ${func_name}")
+            return result
+        }
+    )
+}
+  </code></pre>
+  
+  <h2>8. FFI (Foreign Function Interface)</h2>
+  <div class="test-label">Foreign declarations</div>
+  <pre><code class="language-cangjie">
+foreign func malloc(size: UIntNative): Unit
+foreign func free(ptr: Unit): Unit
+foreign func strlen(s: CPointer&lt;Byte&gt;): UIntNative
+  </code></pre>
+  
+  <h2>9. Operators</h2>
+  <div class="test-label">Various operators</div>
+  <pre><code class="language-cangjie">
+let a = 10 + 5 - 3 * 2 / 4 % 2
+let b = a ?? 0
+let c = a?.value
+let d = a?.method()
+let range = 1..10
+let slice = arr[0..5]
+let lambda = (x) => x * 2
+let pipe = data |> process |> output
+  </code></pre>
+  
+  <h2>10. Control Flow</h2>
+  <div class="test-label">If, for, while, try-catch</div>
+  <pre><code class="language-cangjie">
+func controlFlowDemo() {
+    if (condition) {
+        doSomething()
+    } else {
+        doOther()
+    }
+    
+    for (i in 1..100) {
+        println(i)
+    }
+    
+    while (running) {
+        process()
+    }
+    
+    try {
+        riskyOperation()
+    } catch (e: Exception) {
+        handleError(e)
+    } finally {
+        cleanup()
+    }
+}
+  </code></pre>
+  
+  <h2>11. Imports and Packages</h2>
+  <div class="test-label">Package declarations</div>
+  <pre><code class="language-cangjie">
+package com.example.app
+
+import std.collection.*
+import std.io.File
+import std.math.{sqrt, pow}
+import external.lib.Something as ExtThing
+  </code></pre>
+  
+  <hr style="margin: 40px 0; border-color: #333;">
+  
+  <p style="text-align: center; color: #666;">
+    Test completed. If all code blocks are highlighted, CDN distributable works correctly.
+  </p>
+  
+  <script>
+    hljs.highlightAll();
+    
+    // Add verification message
+    setTimeout(() => {
+      const blocks = document.querySelectorAll('code.language-cangjie');
+      const allHighlighted = Array.from(blocks).every(block => block.classList.contains('hljs'));
+      const msg = document.createElement('p');
+      msg.style.textAlign = 'center';
+      msg.style.padding = '20px';
+      msg.style.borderRadius = '8px';
+      msg.style.marginTop = '20px';
+      
+      if (allHighlighted) {
+        msg.style.background = '#1e4620';
+        msg.style.color = '#4ade80';
+        msg.textContent = '✓ All 11 test blocks successfully highlighted!';
+      } else {
+        msg.style.background = '#461e1e';
+        msg.style.color = '#f87171';
+        msg.textContent = '✗ Some blocks were not highlighted properly';
+      }
+      
+      document.body.appendChild(msg);
+    }, 100);
+  </script>
+</body>
+</html>

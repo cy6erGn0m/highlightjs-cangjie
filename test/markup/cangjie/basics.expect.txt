@@ -2,7 +2,7 @@
 
 <span class="hljs-keyword">import</span> <span class="hljs-title namespace_">std.collection</span><span class="hljs-operator">.*</span>
 <span class="hljs-keyword">import</span> <span class="hljs-title namespace_">std.io.File</span>
-<span class="hljs-keyword">import</span> <span class="hljs-title namespace_">std.math</span>.{sqrt, pow, log}
+<span class="hljs-keyword">import</span> <span class="hljs-title namespace_">std.math</span>.{<span class="hljs-variable">sqrt</span>, <span class="hljs-variable">pow</span>, <span class="hljs-variable">log</span>}
 <span class="hljs-keyword">import</span> <span class="hljs-title namespace_">std.concurrent</span> <span class="hljs-variable">as</span> <span class="hljs-variable">conc</span>
 <span class="hljs-keyword">public</span> <span class="hljs-keyword">import</span> <span class="hljs-title namespace_">std.format</span>
 
@@ -19,45 +19,45 @@
 <span class="hljs-keyword">let</span> <span class="hljs-variable">unitValue</span><span class="hljs-punctuation">:</span> <span class="hljs-type">Unit</span> = ()
 
 <span class="hljs-keyword">func</span> <span class="hljs-title function_">greet</span>(<span class="hljs-variable parameter_">name:</span> String)<span class="hljs-punctuation">:</span> <span class="hljs-type">String</span> {
-    return &quot;Hello, ${name}!&quot;
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Hello, <span class="hljs-subst">${name}</span>!&quot;</span>
 }
 
 <span class="hljs-keyword">class</span> <span class="hljs-title class_">Point</span> {
-    let x: Int64
-    let y: Int64
-    init(x: Int64, y: Int64) {
-        this.x = x
-        this.y = y
+    <span class="hljs-keyword">let</span> <span class="hljs-variable">x</span>: <span class="hljs-type">Int64</span>
+    <span class="hljs-keyword">let</span> <span class="hljs-variable">y</span>: <span class="hljs-type">Int64</span>
+    <span class="hljs-keyword">init(<span class="hljs-variable parameter_">x:</span> Int64, <span class="hljs-variable parameter_">y:</span> Int64)</span> {
+        <span class="hljs-variable">this</span><span class="hljs-property">.x</span> = <span class="hljs-variable">x</span>
+        <span class="hljs-variable">this</span><span class="hljs-property">.y</span> = <span class="hljs-variable">y</span>
     }
 }
 
 <span class="hljs-keyword">struct</span> <span class="hljs-title class_">Rectangle</span> {
-    let width: Int64
-    let height: Int64
+    <span class="hljs-keyword">let</span> <span class="hljs-variable">width</span>: <span class="hljs-type">Int64</span>
+    <span class="hljs-keyword">let</span> <span class="hljs-variable">height</span>: <span class="hljs-type">Int64</span>
 }
 
 <span class="hljs-keyword">enum</span> <span class="hljs-title class_">Color</span> {
-    Red
-    Green
-    Blue
+    <span class="hljs-type">Red</span>
+    <span class="hljs-type">Green</span>
+    <span class="hljs-type">Blue</span>
 }
 
 <span class="hljs-keyword">interface</span> <span class="hljs-title class_">Shape</span> {
-    func area(): Float64
+    <span class="hljs-keyword">func</span> <span class="hljs-title function_">area</span>()<span class="hljs-punctuation">:</span> <span class="hljs-type">Float64</span>
 }
 
 <span class="hljs-keyword">extend</span> <span class="hljs-title class_">Point</span> <span class="hljs-operator">&lt;:</span> <span class="hljs-type">Shape</span> {
-    func area(): Float64 {
-        return 0.0
+    <span class="hljs-keyword">func</span> <span class="hljs-title function_">area</span>()<span class="hljs-punctuation">:</span> <span class="hljs-type">Float64</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-number">0.0</span>
     }
 }
 
 <span class="hljs-keyword">prop</span> <span class="hljs-property">description</span><span class="hljs-punctuation">:</span> <span class="hljs-type">String</span> {
-    get() { return &quot;A shape&quot; }
+    <span class="hljs-title function_ invoke__">get</span>() { <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;A shape&quot;</span> }
 }
 
-<span class="hljs-keyword">type</span> <span class="hljs-title">PointPair</span> = (Point, Point)
+<span class="hljs-keyword">type</span> <span class="hljs-title">PointPair</span> = (<span class="hljs-type">Point</span><span class="hljs-punctuation">,</span> <span class="hljs-type">Point</span>)
 
 <span class="hljs-title function_ invoke__">main</span>() {
-    println(greet(&quot;World&quot;))
+    <span class="hljs-title function_ invoke__">println</span>(<span class="hljs-title function_ invoke__">greet</span>(<span class="hljs-string">&quot;World&quot;</span>))
 }

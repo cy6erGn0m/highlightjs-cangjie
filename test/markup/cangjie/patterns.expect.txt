@@ -1,45 +1,45 @@
-<span class="hljs-keyword">match</span> (value) {
-    case 0 =&gt; println(&quot;zero&quot;)
-    case 1 =&gt; println(&quot;one&quot;)
-    case _ =&gt; println(&quot;other&quot;)
+<span class="hljs-keyword">match</span> (<span class="hljs-variable">value</span>) {
+    <span class="hljs-keyword">case</span> <span class="hljs-number">0</span> <span class="hljs-operator">=&gt;</span> <span class="hljs-title function_ invoke__">println</span>(<span class="hljs-string">&quot;zero&quot;</span>)
+    <span class="hljs-keyword">case</span> <span class="hljs-number">1</span> <span class="hljs-operator">=&gt;</span> <span class="hljs-title function_ invoke__">println</span>(<span class="hljs-string">&quot;one&quot;</span>)
+    <span class="hljs-keyword">case</span> <span class="hljs-variable">_</span> <span class="hljs-operator">=&gt;</span> <span class="hljs-title function_ invoke__">println</span>(<span class="hljs-string">&quot;other&quot;</span>)
 }
 
-<span class="hljs-keyword">match</span> (opt) {
-    case Some(v) =&gt; println(v)
-    case None =&gt; println(&quot;empty&quot;)
+<span class="hljs-keyword">match</span> (<span class="hljs-variable">opt</span>) {
+    <span class="hljs-keyword">case</span> <span class="hljs-type">Some</span>(<span class="hljs-variable">v</span>) <span class="hljs-operator">=&gt;</span> <span class="hljs-title function_ invoke__">println</span>(<span class="hljs-variable">v</span>)
+    <span class="hljs-keyword">case</span> <span class="hljs-type">None</span> <span class="hljs-operator">=&gt;</span> <span class="hljs-title function_ invoke__">println</span>(<span class="hljs-string">&quot;empty&quot;</span>)
 }
 
-<span class="hljs-keyword">match</span> (tuple) {
-    case (0, 0) =&gt; println(&quot;origin&quot;)
-    case (x, 0) =&gt; println(&quot;x-axis: ${x}&quot;)
-    case (0, y) =&gt; println(&quot;y-axis: ${y}&quot;)
-    case (x, y) =&gt; println(&quot;point: ${x}, ${y}&quot;)
+<span class="hljs-keyword">match</span> (<span class="hljs-variable">tuple</span>) {
+    <span class="hljs-keyword">case</span> (<span class="hljs-number">0</span>, <span class="hljs-number">0</span>) <span class="hljs-operator">=&gt;</span> <span class="hljs-title function_ invoke__">println</span>(<span class="hljs-string">&quot;origin&quot;</span>)
+    <span class="hljs-keyword">case</span> (<span class="hljs-variable">x</span>, <span class="hljs-number">0</span>) <span class="hljs-operator">=&gt;</span> <span class="hljs-title function_ invoke__">println</span>(<span class="hljs-string">&quot;x-axis: <span class="hljs-subst">${x}</span>&quot;</span>)
+    <span class="hljs-keyword">case</span> (<span class="hljs-number">0</span>, <span class="hljs-variable">y</span>) <span class="hljs-operator">=&gt;</span> <span class="hljs-title function_ invoke__">println</span>(<span class="hljs-string">&quot;y-axis: <span class="hljs-subst">${y}</span>&quot;</span>)
+    <span class="hljs-keyword">case</span> (<span class="hljs-variable">x</span>, <span class="hljs-variable">y</span>) <span class="hljs-operator">=&gt;</span> <span class="hljs-title function_ invoke__">println</span>(<span class="hljs-string">&quot;point: <span class="hljs-subst">${x}</span>, <span class="hljs-subst">${y}</span>&quot;</span>)
 }
 
-<span class="hljs-keyword">match</span> (list) {
-    case [] =&gt; println(&quot;empty&quot;)
-    case [first] =&gt; println(&quot;single: ${first}&quot;)
-    case [first, ...rest] =&gt; println(&quot;first: ${first}, rest: ${rest}&quot;)
+<span class="hljs-keyword">match</span> (<span class="hljs-variable">list</span>) {
+    <span class="hljs-keyword">case</span> [] <span class="hljs-operator">=&gt;</span> <span class="hljs-title function_ invoke__">println</span>(<span class="hljs-string">&quot;empty&quot;</span>)
+    <span class="hljs-keyword">case</span> [<span class="hljs-variable">first</span>] <span class="hljs-operator">=&gt;</span> <span class="hljs-title function_ invoke__">println</span>(<span class="hljs-string">&quot;single: <span class="hljs-subst">${first}</span>&quot;</span>)
+    <span class="hljs-keyword">case</span> [<span class="hljs-variable">first</span>, <span class="hljs-operator">...</span><span class="hljs-variable">rest</span>] <span class="hljs-operator">=&gt;</span> <span class="hljs-title function_ invoke__">println</span>(<span class="hljs-string">&quot;first: <span class="hljs-subst">${first}</span>, rest: <span class="hljs-subst">${rest}</span>&quot;</span>)
 }
 
-<span class="hljs-keyword">match</span> (value) {
-    case v where v &gt; 0 =&gt; println(&quot;positive&quot;)
-    case v where v &lt; 0 =&gt; println(&quot;negative&quot;)
-    case _ =&gt; println(&quot;zero&quot;)
+<span class="hljs-keyword">match</span> (<span class="hljs-variable">value</span>) {
+    <span class="hljs-keyword">case</span> <span class="hljs-variable">v</span> <span class="hljs-keyword">where</span> <span class="hljs-variable">v</span> &gt; <span class="hljs-number">0</span> <span class="hljs-operator">=&gt;</span> <span class="hljs-title function_ invoke__">println</span>(<span class="hljs-string">&quot;positive&quot;</span>)
+    <span class="hljs-keyword">case</span> <span class="hljs-variable">v</span> <span class="hljs-keyword">where</span> <span class="hljs-variable">v</span> &lt; <span class="hljs-number">0</span> <span class="hljs-operator">=&gt;</span> <span class="hljs-title function_ invoke__">println</span>(<span class="hljs-string">&quot;negative&quot;</span>)
+    <span class="hljs-keyword">case</span> <span class="hljs-variable">_</span> <span class="hljs-operator">=&gt;</span> <span class="hljs-title function_ invoke__">println</span>(<span class="hljs-string">&quot;zero&quot;</span>)
 }
 
-<span class="hljs-keyword">match</span> (expr) {
-    case a | b =&gt; println(&quot;a or b&quot;)
-    case c | d | e =&gt; println(&quot;c, d, or e&quot;)
+<span class="hljs-keyword">match</span> (<span class="hljs-variable">expr</span>) {
+    <span class="hljs-keyword">case</span> <span class="hljs-variable">a</span> <span class="hljs-operator">|</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=&gt;</span> <span class="hljs-title function_ invoke__">println</span>(<span class="hljs-string">&quot;a or b&quot;</span>)
+    <span class="hljs-keyword">case</span> <span class="hljs-variable">c</span> <span class="hljs-operator">|</span> <span class="hljs-variable">d</span> <span class="hljs-operator">|</span> <span class="hljs-variable">e</span> <span class="hljs-operator">=&gt;</span> <span class="hljs-title function_ invoke__">println</span>(<span class="hljs-string">&quot;c, d, or e&quot;</span>)
 }
 
-<span class="hljs-keyword">let</span> <span class="hljs-variable">result</span> = <span class="hljs-keyword">match</span> (opt) {
-    case Some(v) =&gt; v
-    case None =&gt; 0
+<span class="hljs-keyword">let</span> <span class="hljs-variable">result</span> = <span class="hljs-keyword">match</span> (<span class="hljs-variable">opt</span>) {
+    <span class="hljs-keyword">case</span> <span class="hljs-type">Some</span>(<span class="hljs-variable">v</span>) <span class="hljs-operator">=&gt;</span> <span class="hljs-variable">v</span>
+    <span class="hljs-keyword">case</span> <span class="hljs-type">None</span> <span class="hljs-operator">=&gt;</span> <span class="hljs-number">0</span>
 }
 
-<span class="hljs-keyword">match</span> (complex) {
-    case Point(x, y) where x &gt; 0 &amp;&amp; y &gt; 0 =&gt; println(&quot;first quadrant&quot;)
-    case Point(x, y) where x &lt; 0 &amp;&amp; y &gt; 0 =&gt; println(&quot;second quadrant&quot;)
-    case _ =&gt; println(&quot;other&quot;)
+<span class="hljs-keyword">match</span> (<span class="hljs-variable">complex</span>) {
+    <span class="hljs-keyword">case</span> <span class="hljs-type">Point</span>(<span class="hljs-variable">x</span>, <span class="hljs-variable">y</span>) <span class="hljs-keyword">where</span> <span class="hljs-variable">x</span> &gt; <span class="hljs-number">0</span> <span class="hljs-operator">&amp;&amp;</span> <span class="hljs-variable">y</span> &gt; <span class="hljs-number">0</span> <span class="hljs-operator">=&gt;</span> <span class="hljs-title function_ invoke__">println</span>(<span class="hljs-string">&quot;first quadrant&quot;</span>)
+    <span class="hljs-keyword">case</span> <span class="hljs-type">Point</span>(<span class="hljs-variable">x</span>, <span class="hljs-variable">y</span>) <span class="hljs-keyword">where</span> <span class="hljs-variable">x</span> &lt; <span class="hljs-number">0</span> <span class="hljs-operator">&amp;&amp;</span> <span class="hljs-variable">y</span> &gt; <span class="hljs-number">0</span> <span class="hljs-operator">=&gt;</span> <span class="hljs-title function_ invoke__">println</span>(<span class="hljs-string">&quot;second quadrant&quot;</span>)
+    <span class="hljs-keyword">case</span> <span class="hljs-variable">_</span> <span class="hljs-operator">=&gt;</span> <span class="hljs-title function_ invoke__">println</span>(<span class="hljs-string">&quot;other&quot;</span>)
 }

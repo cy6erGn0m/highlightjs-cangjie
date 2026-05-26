@@ -448,10 +448,14 @@ export default function(hljs) {
   };
 
   const METHOD_CALL = {
-    begin: /\.([A-Za-z_][A-Za-z0-9_]*)\(/,
-    beginScope: { 1: 'title.function' },
-    end: /\)/,
-    contains: [ 'self' ]
+    match: [
+      /\./,
+      /[A-Za-z_][A-Za-z0-9_]+/,
+      /\(/,
+    ],
+    scope: {
+      2: 'title.function'
+    }
   };
 
   const MEMBER_ACCESS = {
@@ -557,19 +561,33 @@ export default function(hljs) {
         scope: 'punctuation'
       },
       {
-        begin: /\(/,
-        end: /\)/,
-        contains: [ 'self' ]
-      },
-      {
-        begin: /\[/,
-        end: /\]/,
-        contains: [ 'self' ]
-      },
-      {
         begin: /\{/,
         end: /\}/,
-        contains: [ 'self' ]
+        contains: [
+          'self',
+          LINE_COMMENT,
+          BLOCK_COMMENT,
+          STRING,
+          NUMBER,
+          CONTROL_FLOW,
+          VAR_DECL,
+          FUNCTION_DECL,
+          CLASS_DECL,
+          PROP_DECL,
+          TYPE_DECL,
+          INIT_DECL,
+          FOREIGN_DECL,
+          OPERATORS,
+          METHOD_CALL,
+          MEMBER_ACCESS,
+          SAFE_MEMBER_ACCESS,
+          FUNCTION_INVOKE,
+          TYPE_REFERENCE,
+          VARIABLE,
+          ANNOTATION,
+          ANNOTATION_SIMPLE,
+          ANNOTATION_BANG
+        ]
       }
     ]
   };
